@@ -25,12 +25,12 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.sinistreComboBox = New System.Windows.Forms.ComboBox()
-        Me.SINISTREBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSet1 = New Grille_Appel.DataSet1()
         Me.sinistreTextBox2 = New System.Windows.Forms.TextBox()
         Me.sinistreTextBox = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.SINISTREBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet1 = New Grille_Appel.DataSet1()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.LocaPreTextBox = New System.Windows.Forms.TextBox()
@@ -85,6 +85,8 @@ Partial Class Form1
         Me.COMMUNETableAdapter = New Grille_Appel.DataSet1TableAdapters.COMMUNETableAdapter()
         Me.Envoyer = New System.Windows.Forms.Button()
         Me.DataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.error1 = New System.Windows.Forms.Label()
+        Me.error2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.SINISTREBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,16 +119,6 @@ Partial Class Form1
         Me.sinistreComboBox.Size = New System.Drawing.Size(164, 21)
         Me.sinistreComboBox.TabIndex = 4
         '
-        'SINISTREBindingSource
-        '
-        Me.SINISTREBindingSource.DataMember = "SINISTRE"
-        Me.SINISTREBindingSource.DataSource = Me.DataSet1
-        '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'sinistreTextBox2
         '
         Me.sinistreTextBox2.Location = New System.Drawing.Point(102, 51)
@@ -157,9 +149,19 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(27, 26)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nature"
+        Me.Label1.Text = "Nature *"
+        '
+        'SINISTREBindingSource
+        '
+        Me.SINISTREBindingSource.DataMember = "SINISTRE"
+        Me.SINISTREBindingSource.DataSource = Me.DataSet1
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'GroupBox2
         '
@@ -332,18 +334,18 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(27, 54)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(27, 13)
+        Me.Label3.Size = New System.Drawing.Size(34, 13)
         Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Lieu"
+        Me.Label3.Text = "Lieu *"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(27, 26)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(54, 13)
+        Me.Label4.Size = New System.Drawing.Size(61, 13)
         Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Commune"
+        Me.Label4.Text = "Commune *"
         '
         'COMMUNEBindingSource
         '
@@ -377,7 +379,7 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.DemComTextBox)
         Me.GroupBox3.Controls.Add(Me.Label19)
         Me.GroupBox3.Controls.Add(Me.Label20)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 292)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 299)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(550, 212)
         Me.GroupBox3.TabIndex = 18
@@ -410,27 +412,27 @@ Partial Class Form1
         Me.Label21.AutoSize = True
         Me.Label21.Location = New System.Drawing.Point(376, 22)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(43, 13)
+        Me.Label21.Size = New System.Drawing.Size(50, 13)
         Me.Label21.TabIndex = 5
-        Me.Label21.Text = "Prenom"
+        Me.Label21.Text = "Prenom *"
         '
         'Label22
         '
         Me.Label22.AutoSize = True
         Me.Label22.Location = New System.Drawing.Point(220, 22)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(29, 13)
+        Me.Label22.Size = New System.Drawing.Size(36, 13)
         Me.Label22.TabIndex = 6
-        Me.Label22.Text = "Nom"
+        Me.Label22.Text = "Nom *"
         '
         'Label23
         '
         Me.Label23.AutoSize = True
         Me.Label23.Location = New System.Drawing.Point(27, 22)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(22, 13)
+        Me.Label23.Size = New System.Drawing.Size(29, 13)
         Me.Label23.TabIndex = 7
-        Me.Label23.Text = "Tel"
+        Me.Label23.Text = "Tel *"
         '
         'Label12
         '
@@ -575,24 +577,24 @@ Partial Class Form1
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(27, 96)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(27, 13)
+        Me.Label19.Size = New System.Drawing.Size(34, 13)
         Me.Label19.TabIndex = 1
-        Me.Label19.Text = "Lieu"
+        Me.Label19.Text = "Lieu *"
         '
         'Label20
         '
         Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(27, 68)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(54, 13)
+        Me.Label20.Size = New System.Drawing.Size(61, 13)
         Me.Label20.TabIndex = 0
-        Me.Label20.Text = "Commune"
+        Me.Label20.Text = "Commune *"
         '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.DepartListBox)
         Me.GroupBox4.Controls.Add(Me.Label24)
-        Me.GroupBox4.Location = New System.Drawing.Point(12, 510)
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 533)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(550, 107)
         Me.GroupBox4.TabIndex = 5
@@ -626,7 +628,7 @@ Partial Class Form1
         '
         'Envoyer
         '
-        Me.Envoyer.Location = New System.Drawing.Point(451, 626)
+        Me.Envoyer.Location = New System.Drawing.Point(451, 646)
         Me.Envoyer.Name = "Envoyer"
         Me.Envoyer.Size = New System.Drawing.Size(75, 23)
         Me.Envoyer.TabIndex = 19
@@ -638,11 +640,31 @@ Partial Class Form1
         Me.DataSet1BindingSource.DataSource = Me.DataSet1
         Me.DataSet1BindingSource.Position = 0
         '
+        'error1
+        '
+        Me.error1.AutoSize = True
+        Me.error1.Location = New System.Drawing.Point(92, 289)
+        Me.error1.Name = "error1"
+        Me.error1.Size = New System.Drawing.Size(45, 13)
+        Me.error1.TabIndex = 18
+        Me.error1.Text = "Label25"
+        '
+        'error2
+        '
+        Me.error2.AutoSize = True
+        Me.error2.Location = New System.Drawing.Point(33, 514)
+        Me.error2.Name = "error2"
+        Me.error2.Size = New System.Drawing.Size(45, 13)
+        Me.error2.TabIndex = 21
+        Me.error2.Text = "Label26"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(574, 661)
+        Me.ClientSize = New System.Drawing.Size(574, 681)
+        Me.Controls.Add(Me.error1)
+        Me.Controls.Add(Me.error2)
         Me.Controls.Add(Me.Envoyer)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
@@ -663,6 +685,7 @@ Partial Class Form1
         Me.GroupBox4.PerformLayout()
         CType(Me.DataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -727,5 +750,7 @@ Partial Class Form1
     Friend WithEvents DepartListBox As System.Windows.Forms.ListBox
     Friend WithEvents Envoyer As System.Windows.Forms.Button
     Friend WithEvents DataSet1BindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents error1 As System.Windows.Forms.Label
+    Friend WithEvents error2 As System.Windows.Forms.Label
 
 End Class

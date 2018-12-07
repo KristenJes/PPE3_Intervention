@@ -58,12 +58,21 @@
       
 
         'DEMANDEUR
+
         Dim query As DataTable = Connexion.ORA.Table("SELECT COUNT(*) FROM DEMANDEUR")
         Dim demand_id As Integer = query.Rows(0)("COUNT(*)") + 1
 
-        Dim demande As New Demandeur(demand_id, NomTextBox.Text, PrenomTextBox.Text, TelTextBox.Text, DemLieuTextBox.Text, DemNoTextBox.Text, 0, DemEtageTextBox.Text, DemPorteTextBox.Text, DemBatTextBox.Text, DemCodeTextBox.Text, DemComTextBox.Text, DemPreTextBox.Text)
-        Connexion.ORA.Execute("INSERT INTO DEMANDEUR (DEMAND_ID,DEMAND_NOM,DEMAND_PRENOM,DEMAND_TEL,DEMAND_LIEU,DEMAND_NO,DEMAND_EXT,DEMAND_ETAGE,DEMAND_PORTE,DEMAND_BAT,DEMAND_CODE,CODE_COMMUNE,DEMAND_COMMENTAIRE) VALUES (" & demand_id & ",'" & demande.nom & "','" & demande.prenom & "','" & demande.tel & "','" & demande.lieu & "'," & demande.no & "," & demande.ext & "," & demande.etage & "," & demande.porte & "," & demande.bat & "," & demande.code & "," & demande.codecommune & ",'" & demande.commentaire & "' );")
 
+        If NomTextBox.Text = "" Then
+            error2.Text = "Le Nom n'est pas renseigné"
+        Else
+            Dim demande As New Demandeur(demand_id, NomTextBox.Text, PrenomTextBox.Text, TelTextBox.Text, DemLieuTextBox.Text, DemNoTextBox.Text, 0, DemEtageTextBox.Text, DemPorteTextBox.Text, DemBatTextBox.Text, DemCodeTextBox.Text, DemComTextBox.Text, DemPreTextBox.Text)
+            query = Connexion.ORA.Champ("SELECT COUNT(*) FROM DEMANDEUR WHERE DEMAND_TEL =" & TelTextBox.Text & ";")
+
+            Connexion.ORA.Execute("INSERT INTO DEMANDEUR (DEMAND_ID,DEMAND_NOM,DEMAND_PRENOM,DEMAND_TEL,DEMAND_LIEU,DEMAND_NO,DEMAND_EXT,DEMAND_ETAGE,DEMAND_PORTE,DEMAND_BAT,DEMAND_CODE,CODE_COMMUNE,DEMAND_COMMENTAIRE) VALUES (" & demand_id & ",'" & demande.nom & "','" & demande.prenom & "','" & demande.tel & "','" & demande.lieu & "'," & demande.no & "," & demande.ext & "," & demande.etage & "," & demande.porte & "," & demande.bat & "," & demande.code & "," & demande.codecommune & ",'" & demande.commentaire & "' );")
+
+        End If
+       
 
         'INTERVENTION
         query = Connexion.ORA.Table("SELECT COUNT(*) FROM INTERVENTION")
@@ -74,5 +83,4 @@
 
         Me.Close()
     End Sub
-
 End Class
