@@ -22,72 +22,84 @@ Partial Class Form1
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.sinistreComboBox = New System.Windows.Forms.ComboBox()
+        Me.SINISTREBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet1 = New Grille_Appel.DataSet1()
+        Me.sinistreTextBox2 = New System.Windows.Forms.TextBox()
+        Me.sinistreTextBox = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.LocaPreTextBox = New System.Windows.Forms.TextBox()
+        Me.LocaAppTextBox = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.LocalCheckBox = New System.Windows.Forms.CheckBox()
+        Me.LocaBatTextBox = New System.Windows.Forms.TextBox()
+        Me.LocaCodeTextBox = New System.Windows.Forms.TextBox()
+        Me.LocaEtageTextBox = New System.Windows.Forms.TextBox()
+        Me.LocaNoTextBox = New System.Windows.Forms.TextBox()
+        Me.localisationComboBox = New System.Windows.Forms.ComboBox()
+        Me.LocaLieuTextBox = New System.Windows.Forms.TextBox()
+        Me.LocaComTextBox = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.COMMUNEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TelTextBox = New System.Windows.Forms.TextBox()
+        Me.NomTextBox = New System.Windows.Forms.TextBox()
+        Me.PrenomTextBox = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.DemPreTextBox = New System.Windows.Forms.TextBox()
+        Me.DemPorteTextBox = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
+        Me.DemCheckBox = New System.Windows.Forms.CheckBox()
+        Me.DemBatTextBox = New System.Windows.Forms.TextBox()
+        Me.DemCodeTextBox = New System.Windows.Forms.TextBox()
+        Me.DemEtageTextBox = New System.Windows.Forms.TextBox()
+        Me.DemNoTextBox = New System.Windows.Forms.TextBox()
+        Me.DemComboBox = New System.Windows.Forms.ComboBox()
+        Me.DemLieuTextBox = New System.Windows.Forms.TextBox()
+        Me.DemComTextBox = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.DepartListBox = New System.Windows.Forms.ListBox()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
+        Me.SINISTRETableAdapter = New Grille_Appel.DataSet1TableAdapters.SINISTRETableAdapter()
+        Me.COMMUNETableAdapter = New Grille_Appel.DataSet1TableAdapters.COMMUNETableAdapter()
+        Me.Envoyer = New System.Windows.Forms.Button()
+        Me.DataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox1.SuspendLayout()
+        CType(Me.SINISTREBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.COMMUNEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.DataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.sinistreComboBox)
+        Me.GroupBox1.Controls.Add(Me.sinistreTextBox2)
+        Me.GroupBox1.Controls.Add(Me.sinistreTextBox)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
@@ -97,14 +109,39 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "SINISTRE"
         '
-        'Label1
+        'sinistreComboBox
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(27, 26)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nature"
+        Me.sinistreComboBox.FormattingEnabled = True
+        Me.sinistreComboBox.Location = New System.Drawing.Point(143, 22)
+        Me.sinistreComboBox.Name = "sinistreComboBox"
+        Me.sinistreComboBox.Size = New System.Drawing.Size(164, 21)
+        Me.sinistreComboBox.TabIndex = 4
+        '
+        'SINISTREBindingSource
+        '
+        Me.SINISTREBindingSource.DataMember = "SINISTRE"
+        Me.SINISTREBindingSource.DataSource = Me.DataSet1
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'sinistreTextBox2
+        '
+        Me.sinistreTextBox2.Location = New System.Drawing.Point(102, 51)
+        Me.sinistreTextBox2.Multiline = True
+        Me.sinistreTextBox2.Name = "sinistreTextBox2"
+        Me.sinistreTextBox2.Size = New System.Drawing.Size(442, 50)
+        Me.sinistreTextBox2.TabIndex = 3
+        '
+        'sinistreTextBox
+        '
+        Me.sinistreTextBox.Location = New System.Drawing.Point(102, 23)
+        Me.sinistreTextBox.Name = "sinistreTextBox"
+        Me.sinistreTextBox.ReadOnly = True
+        Me.sinistreTextBox.Size = New System.Drawing.Size(23, 20)
+        Me.sinistreTextBox.TabIndex = 2
         '
         'Label2
         '
@@ -115,48 +152,34 @@ Partial Class Form1
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Observations"
         '
-        'TextBox1
+        'Label1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(102, 23)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(23, 20)
-        Me.TextBox1.TabIndex = 2
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(102, 51)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(442, 50)
-        Me.TextBox2.TabIndex = 3
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(143, 22)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(164, 21)
-        Me.ComboBox1.TabIndex = 4
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(27, 26)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Nature"
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.TextBox10)
-        Me.GroupBox2.Controls.Add(Me.TextBox9)
+        Me.GroupBox2.Controls.Add(Me.LocaPreTextBox)
+        Me.GroupBox2.Controls.Add(Me.LocaAppTextBox)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.CheckBox1)
-        Me.GroupBox2.Controls.Add(Me.TextBox8)
-        Me.GroupBox2.Controls.Add(Me.TextBox7)
-        Me.GroupBox2.Controls.Add(Me.TextBox6)
-        Me.GroupBox2.Controls.Add(Me.TextBox5)
-        Me.GroupBox2.Controls.Add(Me.ComboBox2)
-        Me.GroupBox2.Controls.Add(Me.TextBox3)
-        Me.GroupBox2.Controls.Add(Me.TextBox4)
+        Me.GroupBox2.Controls.Add(Me.LocalCheckBox)
+        Me.GroupBox2.Controls.Add(Me.LocaBatTextBox)
+        Me.GroupBox2.Controls.Add(Me.LocaCodeTextBox)
+        Me.GroupBox2.Controls.Add(Me.LocaEtageTextBox)
+        Me.GroupBox2.Controls.Add(Me.LocaNoTextBox)
+        Me.GroupBox2.Controls.Add(Me.localisationComboBox)
+        Me.GroupBox2.Controls.Add(Me.LocaLieuTextBox)
+        Me.GroupBox2.Controls.Add(Me.LocaComTextBox)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 125)
@@ -166,27 +189,143 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "LOCALISATION"
         '
-        'ComboBox2
+        'Label11
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(186, 22)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 4
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(27, 112)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(55, 13)
+        Me.Label11.TabIndex = 5
+        Me.Label11.Text = "Précisions"
         '
-        'TextBox3
+        'LocaPreTextBox
         '
-        Me.TextBox3.Location = New System.Drawing.Point(102, 51)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(442, 20)
-        Me.TextBox3.TabIndex = 3
+        Me.LocaPreTextBox.Location = New System.Drawing.Point(102, 112)
+        Me.LocaPreTextBox.Multiline = True
+        Me.LocaPreTextBox.Name = "LocaPreTextBox"
+        Me.LocaPreTextBox.Size = New System.Drawing.Size(442, 49)
+        Me.LocaPreTextBox.TabIndex = 17
         '
-        'TextBox4
+        'LocaAppTextBox
         '
-        Me.TextBox4.Location = New System.Drawing.Point(102, 23)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox4.TabIndex = 2
+        Me.LocaAppTextBox.Location = New System.Drawing.Point(314, 77)
+        Me.LocaAppTextBox.Name = "LocaAppTextBox"
+        Me.LocaAppTextBox.Size = New System.Drawing.Size(35, 20)
+        Me.LocaAppTextBox.TabIndex = 16
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(45, 79)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(21, 13)
+        Me.Label10.TabIndex = 15
+        Me.Label10.Text = "No"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(103, 79)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(22, 13)
+        Me.Label9.TabIndex = 14
+        Me.Label9.Text = "Ext"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(164, 79)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(35, 13)
+        Me.Label8.TabIndex = 13
+        Me.Label8.Text = "Etage"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(252, 80)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(56, 13)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "App/Porte"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(355, 79)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(23, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Bat"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(436, 79)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(64, 13)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Code accès"
+        '
+        'LocalCheckBox
+        '
+        Me.LocalCheckBox.AutoSize = True
+        Me.LocalCheckBox.Location = New System.Drawing.Point(131, 79)
+        Me.LocalCheckBox.Name = "LocalCheckBox"
+        Me.LocalCheckBox.Size = New System.Drawing.Size(15, 14)
+        Me.LocalCheckBox.TabIndex = 9
+        Me.LocalCheckBox.UseVisualStyleBackColor = True
+        '
+        'LocaBatTextBox
+        '
+        Me.LocaBatTextBox.Location = New System.Drawing.Point(384, 76)
+        Me.LocaBatTextBox.Name = "LocaBatTextBox"
+        Me.LocaBatTextBox.Size = New System.Drawing.Size(35, 20)
+        Me.LocaBatTextBox.TabIndex = 8
+        '
+        'LocaCodeTextBox
+        '
+        Me.LocaCodeTextBox.Location = New System.Drawing.Point(506, 76)
+        Me.LocaCodeTextBox.Name = "LocaCodeTextBox"
+        Me.LocaCodeTextBox.Size = New System.Drawing.Size(38, 20)
+        Me.LocaCodeTextBox.TabIndex = 7
+        '
+        'LocaEtageTextBox
+        '
+        Me.LocaEtageTextBox.Location = New System.Drawing.Point(205, 77)
+        Me.LocaEtageTextBox.Name = "LocaEtageTextBox"
+        Me.LocaEtageTextBox.Size = New System.Drawing.Size(36, 20)
+        Me.LocaEtageTextBox.TabIndex = 6
+        '
+        'LocaNoTextBox
+        '
+        Me.LocaNoTextBox.Location = New System.Drawing.Point(73, 76)
+        Me.LocaNoTextBox.Name = "LocaNoTextBox"
+        Me.LocaNoTextBox.Size = New System.Drawing.Size(23, 20)
+        Me.LocaNoTextBox.TabIndex = 5
+        '
+        'localisationComboBox
+        '
+        Me.localisationComboBox.FormattingEnabled = True
+        Me.localisationComboBox.Location = New System.Drawing.Point(186, 22)
+        Me.localisationComboBox.Name = "localisationComboBox"
+        Me.localisationComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.localisationComboBox.TabIndex = 4
+        '
+        'LocaLieuTextBox
+        '
+        Me.LocaLieuTextBox.Location = New System.Drawing.Point(102, 51)
+        Me.LocaLieuTextBox.Name = "LocaLieuTextBox"
+        Me.LocaLieuTextBox.Size = New System.Drawing.Size(442, 20)
+        Me.LocaLieuTextBox.TabIndex = 3
+        '
+        'LocaComTextBox
+        '
+        Me.LocaComTextBox.Location = New System.Drawing.Point(102, 23)
+        Me.LocaComTextBox.Name = "LocaComTextBox"
+        Me.LocaComTextBox.ReadOnly = True
+        Me.LocaComTextBox.Size = New System.Drawing.Size(56, 20)
+        Me.LocaComTextBox.TabIndex = 2
         '
         'Label3
         '
@@ -206,146 +345,36 @@ Partial Class Form1
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Commune"
         '
-        'TextBox5
+        'COMMUNEBindingSource
         '
-        Me.TextBox5.Location = New System.Drawing.Point(73, 76)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(23, 20)
-        Me.TextBox5.TabIndex = 5
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(205, 77)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(36, 20)
-        Me.TextBox6.TabIndex = 6
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(506, 76)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(38, 20)
-        Me.TextBox7.TabIndex = 7
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(384, 76)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(35, 20)
-        Me.TextBox8.TabIndex = 8
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(131, 79)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(15, 14)
-        Me.CheckBox1.TabIndex = 9
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(436, 79)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(64, 13)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Code accès"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(355, 79)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(23, 13)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Bat"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(252, 80)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(56, 13)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "App/Porte"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(164, 79)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(35, 13)
-        Me.Label8.TabIndex = 13
-        Me.Label8.Text = "Etage"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(103, 79)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(22, 13)
-        Me.Label9.TabIndex = 14
-        Me.Label9.Text = "Ext"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(45, 79)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(21, 13)
-        Me.Label10.TabIndex = 15
-        Me.Label10.Text = "No"
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(314, 77)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(35, 20)
-        Me.TextBox9.TabIndex = 16
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Location = New System.Drawing.Point(102, 112)
-        Me.TextBox10.Multiline = True
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(442, 49)
-        Me.TextBox10.TabIndex = 17
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(27, 112)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(55, 13)
-        Me.Label11.TabIndex = 5
-        Me.Label11.Text = "Précisions"
+        Me.COMMUNEBindingSource.DataMember = "COMMUNE"
+        Me.COMMUNEBindingSource.DataSource = Me.DataSet1
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.TextBox21)
-        Me.GroupBox3.Controls.Add(Me.TextBox20)
-        Me.GroupBox3.Controls.Add(Me.TextBox19)
+        Me.GroupBox3.Controls.Add(Me.TelTextBox)
+        Me.GroupBox3.Controls.Add(Me.NomTextBox)
+        Me.GroupBox3.Controls.Add(Me.PrenomTextBox)
         Me.GroupBox3.Controls.Add(Me.Label21)
         Me.GroupBox3.Controls.Add(Me.Label22)
         Me.GroupBox3.Controls.Add(Me.Label23)
         Me.GroupBox3.Controls.Add(Me.Label12)
-        Me.GroupBox3.Controls.Add(Me.TextBox11)
-        Me.GroupBox3.Controls.Add(Me.TextBox12)
+        Me.GroupBox3.Controls.Add(Me.DemPreTextBox)
+        Me.GroupBox3.Controls.Add(Me.DemPorteTextBox)
         Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Controls.Add(Me.Label14)
         Me.GroupBox3.Controls.Add(Me.Label15)
         Me.GroupBox3.Controls.Add(Me.Label16)
         Me.GroupBox3.Controls.Add(Me.Label17)
         Me.GroupBox3.Controls.Add(Me.Label18)
-        Me.GroupBox3.Controls.Add(Me.CheckBox2)
-        Me.GroupBox3.Controls.Add(Me.TextBox13)
-        Me.GroupBox3.Controls.Add(Me.TextBox14)
-        Me.GroupBox3.Controls.Add(Me.TextBox15)
-        Me.GroupBox3.Controls.Add(Me.TextBox16)
-        Me.GroupBox3.Controls.Add(Me.ComboBox3)
-        Me.GroupBox3.Controls.Add(Me.TextBox17)
-        Me.GroupBox3.Controls.Add(Me.TextBox18)
+        Me.GroupBox3.Controls.Add(Me.DemCheckBox)
+        Me.GroupBox3.Controls.Add(Me.DemBatTextBox)
+        Me.GroupBox3.Controls.Add(Me.DemCodeTextBox)
+        Me.GroupBox3.Controls.Add(Me.DemEtageTextBox)
+        Me.GroupBox3.Controls.Add(Me.DemNoTextBox)
+        Me.GroupBox3.Controls.Add(Me.DemComboBox)
+        Me.GroupBox3.Controls.Add(Me.DemLieuTextBox)
+        Me.GroupBox3.Controls.Add(Me.DemComTextBox)
         Me.GroupBox3.Controls.Add(Me.Label19)
         Me.GroupBox3.Controls.Add(Me.Label20)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 292)
@@ -354,6 +383,54 @@ Partial Class Form1
         Me.GroupBox3.TabIndex = 18
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "DEMANDEUR"
+        '
+        'TelTextBox
+        '
+        Me.TelTextBox.Location = New System.Drawing.Point(55, 19)
+        Me.TelTextBox.Name = "TelTextBox"
+        Me.TelTextBox.Size = New System.Drawing.Size(144, 20)
+        Me.TelTextBox.TabIndex = 20
+        '
+        'NomTextBox
+        '
+        Me.NomTextBox.Location = New System.Drawing.Point(255, 19)
+        Me.NomTextBox.Name = "NomTextBox"
+        Me.NomTextBox.Size = New System.Drawing.Size(115, 20)
+        Me.NomTextBox.TabIndex = 19
+        '
+        'PrenomTextBox
+        '
+        Me.PrenomTextBox.Location = New System.Drawing.Point(425, 19)
+        Me.PrenomTextBox.Name = "PrenomTextBox"
+        Me.PrenomTextBox.Size = New System.Drawing.Size(119, 20)
+        Me.PrenomTextBox.TabIndex = 18
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(376, 22)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(43, 13)
+        Me.Label21.TabIndex = 5
+        Me.Label21.Text = "Prenom"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(220, 22)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(29, 13)
+        Me.Label22.TabIndex = 6
+        Me.Label22.Text = "Nom"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(27, 22)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(22, 13)
+        Me.Label23.TabIndex = 7
+        Me.Label23.Text = "Tel"
         '
         'Label12
         '
@@ -364,20 +441,20 @@ Partial Class Form1
         Me.Label12.TabIndex = 5
         Me.Label12.Text = "Précisions"
         '
-        'TextBox11
+        'DemPreTextBox
         '
-        Me.TextBox11.Location = New System.Drawing.Point(102, 154)
-        Me.TextBox11.Multiline = True
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(442, 49)
-        Me.TextBox11.TabIndex = 17
+        Me.DemPreTextBox.Location = New System.Drawing.Point(102, 154)
+        Me.DemPreTextBox.Multiline = True
+        Me.DemPreTextBox.Name = "DemPreTextBox"
+        Me.DemPreTextBox.Size = New System.Drawing.Size(442, 49)
+        Me.DemPreTextBox.TabIndex = 17
         '
-        'TextBox12
+        'DemPorteTextBox
         '
-        Me.TextBox12.Location = New System.Drawing.Point(314, 119)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(35, 20)
-        Me.TextBox12.TabIndex = 16
+        Me.DemPorteTextBox.Location = New System.Drawing.Point(314, 119)
+        Me.DemPorteTextBox.Name = "DemPorteTextBox"
+        Me.DemPorteTextBox.Size = New System.Drawing.Size(35, 20)
+        Me.DemPorteTextBox.TabIndex = 16
         '
         'Label13
         '
@@ -433,64 +510,65 @@ Partial Class Form1
         Me.Label18.TabIndex = 10
         Me.Label18.Text = "Code accès"
         '
-        'CheckBox2
+        'DemCheckBox
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(131, 121)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(15, 14)
-        Me.CheckBox2.TabIndex = 9
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.DemCheckBox.AutoSize = True
+        Me.DemCheckBox.Location = New System.Drawing.Point(131, 121)
+        Me.DemCheckBox.Name = "DemCheckBox"
+        Me.DemCheckBox.Size = New System.Drawing.Size(15, 14)
+        Me.DemCheckBox.TabIndex = 9
+        Me.DemCheckBox.UseVisualStyleBackColor = True
         '
-        'TextBox13
+        'DemBatTextBox
         '
-        Me.TextBox13.Location = New System.Drawing.Point(384, 118)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(35, 20)
-        Me.TextBox13.TabIndex = 8
+        Me.DemBatTextBox.Location = New System.Drawing.Point(384, 118)
+        Me.DemBatTextBox.Name = "DemBatTextBox"
+        Me.DemBatTextBox.Size = New System.Drawing.Size(35, 20)
+        Me.DemBatTextBox.TabIndex = 8
         '
-        'TextBox14
+        'DemCodeTextBox
         '
-        Me.TextBox14.Location = New System.Drawing.Point(506, 118)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(38, 20)
-        Me.TextBox14.TabIndex = 7
+        Me.DemCodeTextBox.Location = New System.Drawing.Point(506, 118)
+        Me.DemCodeTextBox.Name = "DemCodeTextBox"
+        Me.DemCodeTextBox.Size = New System.Drawing.Size(38, 20)
+        Me.DemCodeTextBox.TabIndex = 7
         '
-        'TextBox15
+        'DemEtageTextBox
         '
-        Me.TextBox15.Location = New System.Drawing.Point(205, 119)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(36, 20)
-        Me.TextBox15.TabIndex = 6
+        Me.DemEtageTextBox.Location = New System.Drawing.Point(205, 119)
+        Me.DemEtageTextBox.Name = "DemEtageTextBox"
+        Me.DemEtageTextBox.Size = New System.Drawing.Size(36, 20)
+        Me.DemEtageTextBox.TabIndex = 6
         '
-        'TextBox16
+        'DemNoTextBox
         '
-        Me.TextBox16.Location = New System.Drawing.Point(73, 118)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(23, 20)
-        Me.TextBox16.TabIndex = 5
+        Me.DemNoTextBox.Location = New System.Drawing.Point(73, 118)
+        Me.DemNoTextBox.Name = "DemNoTextBox"
+        Me.DemNoTextBox.Size = New System.Drawing.Size(23, 20)
+        Me.DemNoTextBox.TabIndex = 5
         '
-        'ComboBox3
+        'DemComboBox
         '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(186, 64)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox3.TabIndex = 4
+        Me.DemComboBox.FormattingEnabled = True
+        Me.DemComboBox.Location = New System.Drawing.Point(186, 64)
+        Me.DemComboBox.Name = "DemComboBox"
+        Me.DemComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.DemComboBox.TabIndex = 4
         '
-        'TextBox17
+        'DemLieuTextBox
         '
-        Me.TextBox17.Location = New System.Drawing.Point(102, 93)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(442, 20)
-        Me.TextBox17.TabIndex = 3
+        Me.DemLieuTextBox.Location = New System.Drawing.Point(102, 93)
+        Me.DemLieuTextBox.Name = "DemLieuTextBox"
+        Me.DemLieuTextBox.Size = New System.Drawing.Size(442, 20)
+        Me.DemLieuTextBox.TabIndex = 3
         '
-        'TextBox18
+        'DemComTextBox
         '
-        Me.TextBox18.Location = New System.Drawing.Point(102, 65)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox18.TabIndex = 2
+        Me.DemComTextBox.Location = New System.Drawing.Point(102, 65)
+        Me.DemComTextBox.Name = "DemComTextBox"
+        Me.DemComTextBox.ReadOnly = True
+        Me.DemComTextBox.Size = New System.Drawing.Size(56, 20)
+        Me.DemComTextBox.TabIndex = 2
         '
         'Label19
         '
@@ -510,57 +588,9 @@ Partial Class Form1
         Me.Label20.TabIndex = 0
         Me.Label20.Text = "Commune"
         '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(376, 22)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(43, 13)
-        Me.Label21.TabIndex = 5
-        Me.Label21.Text = "Prenom"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(220, 22)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(29, 13)
-        Me.Label22.TabIndex = 6
-        Me.Label22.Text = "Nom"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(27, 22)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(22, 13)
-        Me.Label23.TabIndex = 7
-        Me.Label23.Text = "Tel"
-        '
-        'TextBox19
-        '
-        Me.TextBox19.Location = New System.Drawing.Point(425, 19)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(119, 20)
-        Me.TextBox19.TabIndex = 18
-        '
-        'TextBox20
-        '
-        Me.TextBox20.Location = New System.Drawing.Point(255, 19)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(115, 20)
-        Me.TextBox20.TabIndex = 19
-        '
-        'TextBox21
-        '
-        Me.TextBox21.Location = New System.Drawing.Point(55, 19)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(144, 20)
-        Me.TextBox21.TabIndex = 20
-        '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.TextBox22)
+        Me.GroupBox4.Controls.Add(Me.DepartListBox)
         Me.GroupBox4.Controls.Add(Me.Label24)
         Me.GroupBox4.Location = New System.Drawing.Point(12, 510)
         Me.GroupBox4.Name = "GroupBox4"
@@ -568,6 +598,14 @@ Partial Class Form1
         Me.GroupBox4.TabIndex = 5
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "DEPART"
+        '
+        'DepartListBox
+        '
+        Me.DepartListBox.FormattingEnabled = True
+        Me.DepartListBox.Location = New System.Drawing.Point(106, 30)
+        Me.DepartListBox.Name = "DepartListBox"
+        Me.DepartListBox.Size = New System.Drawing.Size(93, 69)
+        Me.DepartListBox.TabIndex = 6
         '
         'Label24
         '
@@ -578,19 +616,34 @@ Partial Class Form1
         Me.Label24.TabIndex = 5
         Me.Label24.Text = "Depart Type"
         '
-        'TextBox22
+        'SINISTRETableAdapter
         '
-        Me.TextBox22.Location = New System.Drawing.Point(99, 30)
-        Me.TextBox22.Multiline = True
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(142, 71)
-        Me.TextBox22.TabIndex = 18
+        Me.SINISTRETableAdapter.ClearBeforeFill = True
+        '
+        'COMMUNETableAdapter
+        '
+        Me.COMMUNETableAdapter.ClearBeforeFill = True
+        '
+        'Envoyer
+        '
+        Me.Envoyer.Location = New System.Drawing.Point(451, 626)
+        Me.Envoyer.Name = "Envoyer"
+        Me.Envoyer.Size = New System.Drawing.Size(75, 23)
+        Me.Envoyer.TabIndex = 19
+        Me.Envoyer.Text = "Envoyer"
+        Me.Envoyer.UseVisualStyleBackColor = True
+        '
+        'DataSet1BindingSource
+        '
+        Me.DataSet1BindingSource.DataSource = Me.DataSet1
+        Me.DataSet1BindingSource.Position = 0
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(574, 624)
+        Me.ClientSize = New System.Drawing.Size(574, 661)
+        Me.Controls.Add(Me.Envoyer)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -599,35 +652,39 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.SINISTREBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.COMMUNEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.DataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents sinistreComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents sinistreTextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents sinistreTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents LocalCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents LocaBatTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents LocaCodeTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents LocaEtageTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents LocaNoTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents localisationComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents LocaLieuTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents LocaComTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents LocaPreTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents LocaAppTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
@@ -635,33 +692,40 @@ Partial Class Form1
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox19 As System.Windows.Forms.TextBox
+    Friend WithEvents TelTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents NomTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents PrenomTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
+    Friend WithEvents DemPreTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DemPorteTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox18 As System.Windows.Forms.TextBox
+    Friend WithEvents DemCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents DemBatTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DemCodeTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DemEtageTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DemNoTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DemComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents DemLieuTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents DemComTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox22 As System.Windows.Forms.TextBox
     Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents DataSet1 As Grille_Appel.DataSet1
+    Friend WithEvents SINISTREBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents SINISTRETableAdapter As Grille_Appel.DataSet1TableAdapters.SINISTRETableAdapter
+    Friend WithEvents COMMUNEBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents COMMUNETableAdapter As Grille_Appel.DataSet1TableAdapters.COMMUNETableAdapter
+    Friend WithEvents DepartListBox As System.Windows.Forms.ListBox
+    Friend WithEvents Envoyer As System.Windows.Forms.Button
+    Friend WithEvents DataSet1BindingSource As System.Windows.Forms.BindingSource
 
 End Class
