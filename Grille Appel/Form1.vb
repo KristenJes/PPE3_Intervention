@@ -53,34 +53,56 @@
     End Sub
 
 
-    Private Sub Envoyer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Envoyer.Click
+    'Verifier si un demandeur existe deja
+    Private Sub TelTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TelTextBox.TextChanged
+        Try
+            Dim query As DataTable = Connexion.ORA.Table("SELECT * FROM DEMANDEUR WHERE DEMAND_TEL=" & TelTextBox.Text)
+            NomTextBox.Text = query.Rows(0)("DEMAND_NOM")
+            PrenomTextBox.Text = query.Rows(0)("DEMAND_PRENOM")
+        Catch ex As Exception
 
-      
+        End Try
+    End Sub
+
+    Private Sub Envoyer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Envoyer.Click
 
         'DEMANDEUR
 
         Dim query As DataTable = Connexion.ORA.Table("SELECT COUNT(*) FROM DEMANDEUR")
         Dim demand_id As Integer = query.Rows(0)("COUNT(*)") + 1
 
-
-        If NomTextBox.Text = "" Then
-            error2.Text = "Le Nom n'est pas renseigné"
+        'Verif si exterieur
+        Dim DemandExt As Integer
+        If DemCheckBox.Checked Then
+            DemandExt = 1
         Else
-            Dim demande As New Demandeur(demand_id, NomTextBox.Text, PrenomTextBox.Text, TelTextBox.Text, DemLieuTextBox.Text, DemNoTextBox.Text, 0, DemEtageTextBox.Text, DemPorteTextBox.Text, DemBatTextBox.Text, DemCodeTextBox.Text, DemComTextBox.Text, DemPreTextBox.Text)
-            query = Connexion.ORA.Champ("SELECT COUNT(*) FROM DEMANDEUR WHERE DEMAND_TEL =" & TelTextBox.Text & ";")
-
-            Connexion.ORA.Execute("INSERT INTO DEMANDEUR (DEMAND_ID,DEMAND_NOM,DEMAND_PRENOM,DEMAND_TEL,DEMAND_LIEU,DEMAND_NO,DEMAND_EXT,DEMAND_ETAGE,DEMAND_PORTE,DEMAND_BAT,DEMAND_CODE,CODE_COMMUNE,DEMAND_COMMENTAIRE) VALUES (" & demand_id & ",'" & demande.nom & "','" & demande.prenom & "','" & demande.tel & "','" & demande.lieu & "'," & demande.no & "," & demande.ext & "," & demande.etage & "," & demande.porte & "," & demande.bat & "," & demande.code & "," & demande.codecommune & ",'" & demande.commentaire & "' );")
-
+            DemandExt = 0
         End If
-       
+
+        'Insertion des données
+        Dim demande As New Demandeur(demand_id, NomTextBox.Text, PrenomTextBox.Text, TelTextBox.Text, DemLieuTextBox.Text, DemNoTextBox.Text, DemandExt, DemEtageTextBox.Text, DemPorteTextBox.Text, DemBatTextBox.Text, DemCodeTextBox.Text, DemComTextBox.Text, DemPreTextBox.Text)
+        Connexion.ORA.Execute("INSERT INTO DEMANDEUR (DEMAND_ID,DEMAND_NOM,DEMAND_PRENOM,DEMAND_TEL,DEMAND_LIEU,DEMAND_NO,DEMAND_EXT,DEMAND_ETAGE,DEMAND_PORTE,DEMAND_BAT,DEMAND_CODE,CODE_COMMUNE,DEMAND_COMMENTAIRE) VALUES (" & demand_id & ",'" & demande.nom & "','" & demande.prenom & "','" & demande.tel & "','" & demande.lieu & "'," & demande.no & "," & demande.ext & "," & demande.etage & "," & demande.porte & "," & demande.bat & "," & demande.code & "," & demande.codecommune & ",'" & demande.commentaire & "' );")
+
+        
 
         'INTERVENTION
         query = Connexion.ORA.Table("SELECT COUNT(*) FROM INTERVENTION")
         Dim interv_id As Integer = query.Rows(0)("COUNT(*)") + 1
 
-        Dim uneIntervention As New Intervention(interv_id, LocaLieuTextBox.Text, LocaNoTextBox.Text, 0, LocaEtageTextBox.Text, LocaAppTextBox.Text, LocaBatTextBox.Text, LocaCodeTextBox.Text, LocaPreTextBox.Text, sinistreTextBox.Text, Format(Today.Date, "dd/MM/yy"), LocaComTextBox.Text, sinistreTextBox2.Text, demand_id)
+        'Verif si exterieur
+        Dim IntervExt As Integer
+        If LocalCheckBox.Checked Then
+            IntervExt = 1
+        Else
+            IntervExt = 0
+        End If
+
+        'Insertion des données
+        Dim uneIntervention As New Intervention(interv_id, LocaLieuTextBox.Text, LocaNoTextBox.Text, IntervExt, LocaEtageTextBox.Text, LocaAppTextBox.Text, LocaBatTextBox.Text, LocaCodeTextBox.Text, LocaPreTextBox.Text, sinistreTextBox.Text, Format(Today.Date, "dd/MM/yy"), LocaComTextBox.Text, sinistreTextBox2.Text, demand_id)
         Connexion.ORA.Execute("INSERT INTO INTERVENTION VALUES (" & interv_id & ",'" & uneIntervention.lieu & "'," & uneIntervention.no & "," & uneIntervention.ext & "," & uneIntervention.etage & "," & uneIntervention.porte & ",'" & uneIntervention.bat & "'," & uneIntervention.code & ",'" & uneIntervention.commentaire & "','" & uneIntervention.statut & "'," & uneIntervention.sin & ",TO_DATE('" & uneIntervention.dte & "','DD-MM-YY')," & uneIntervention.commune & ",'" & uneIntervention.sinobserv & "'," & demand_id & ");")
 
         Me.Close()
     End Sub
+
+
 End Class
