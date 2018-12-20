@@ -65,43 +65,51 @@
     End Sub
 
     Private Sub Envoyer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Envoyer.Click
+        'CAS ERREURS
 
-        'DEMANDEUR
 
-        Dim query As DataTable = Connexion.ORA.Table("SELECT COUNT(*) FROM DEMANDEUR")
-        Dim demand_id As Integer = query.Rows(0)("COUNT(*)") + 1
 
-        'Verif si exterieur
-        Dim DemandExt As Integer
-        If DemCheckBox.Checked Then
-            DemandExt = 1
-        Else
-            DemandExt = 0
-        End If
+        Try
+            'DEMANDEUR
 
-        'Insertion des données
-        Dim demande As New Demandeur(demand_id, NomTextBox.Text, PrenomTextBox.Text, TelTextBox.Text, DemLieuTextBox.Text, DemNoTextBox.Text, DemandExt, DemEtageTextBox.Text, DemPorteTextBox.Text, DemBatTextBox.Text, DemCodeTextBox.Text, DemComTextBox.Text, DemPreTextBox.Text)
-        Connexion.ORA.Execute("INSERT INTO DEMANDEUR (DEMAND_ID,DEMAND_NOM,DEMAND_PRENOM,DEMAND_TEL,DEMAND_LIEU,DEMAND_NO,DEMAND_EXT,DEMAND_ETAGE,DEMAND_PORTE,DEMAND_BAT,DEMAND_CODE,CODE_COMMUNE,DEMAND_COMMENTAIRE) VALUES (" & demand_id & ",'" & demande.nom & "','" & demande.prenom & "','" & demande.tel & "','" & demande.lieu & "'," & demande.no & "," & demande.ext & "," & demande.etage & "," & demande.porte & "," & demande.bat & "," & demande.code & "," & demande.codecommune & ",'" & demande.commentaire & "' );")
+            Dim query As DataTable = Connexion.ORA.Table("SELECT COUNT(*) FROM DEMANDEUR")
+            Dim demand_id As Integer = query.Rows(0)("COUNT(*)") + 1
 
+            'Verif si exterieur
+            Dim DemandExt As Integer
+            If DemCheckBox.Checked Then
+                DemandExt = 1
+            Else
+                DemandExt = 0
+            End If
+
+            'Insertion des données
+            Dim demande As New Demandeur(demand_id, NomTextBox.Text, PrenomTextBox.Text, TelTextBox.Text, DemLieuTextBox.Text, DemNoTextBox.Text, DemandExt, DemEtageTextBox.Text, DemPorteTextBox.Text, DemBatTextBox.Text, DemCodeTextBox.Text, DemComTextBox.Text, DemPreTextBox.Text)
+            Connexion.ORA.Execute("INSERT INTO DEMANDEUR (DEMAND_ID,DEMAND_NOM,DEMAND_PRENOM,DEMAND_TEL,DEMAND_LIEU,DEMAND_NO,DEMAND_EXT,DEMAND_ETAGE,DEMAND_PORTE,DEMAND_BAT,DEMAND_CODE,CODE_COMMUNE,DEMAND_COMMENTAIRE) VALUES (" & demand_id & ",'" & demande.nom & "','" & demande.prenom & "','" & demande.tel & "','" & demande.lieu & "'," & demande.no & "," & demande.ext & "," & demande.etage & "," & demande.porte & "," & demande.bat & "," & demande.code & "," & demande.codecommune & ",'" & demande.commentaire & "' );")
+
+
+
+            'INTERVENTION
+            query = Connexion.ORA.Table("SELECT COUNT(*) FROM INTERVENTION")
+            Dim interv_id As Integer = query.Rows(0)("COUNT(*)") + 1
+
+            'Verif si exterieur
+            Dim IntervExt As Integer
+            If LocalCheckBox.Checked Then
+                IntervExt = 1
+            Else
+                IntervExt = 0
+            End If
+
+            'Insertion des données
+            Dim uneIntervention As New Intervention(interv_id, LocaLieuTextBox.Text, LocaNoTextBox.Text, IntervExt, LocaEtageTextBox.Text, LocaAppTextBox.Text, LocaBatTextBox.Text, LocaCodeTextBox.Text, LocaPreTextBox.Text, sinistreTextBox.Text, LocaComTextBox.Text, sinistreTextBox2.Text, demand_id)
+            Connexion.ORA.Execute("INSERT INTO INTERVENTION (INTERV_ID, INTERV_LIEU, INTERV_NO, INTERV_EXT, INTERV_ETAGE, INTERV_PORTE, INTERV_BAT, INTERV_CODE, INTERV_COMMENTAIRE, INTERV_SIN_ID, INTERV_COMMUNE,SIN_OBSERVATION, DEMAND_ID) VALUES (" & interv_id & ",'" & uneIntervention.lieu & "'," & uneIntervention.no & "," & uneIntervention.ext & "," & uneIntervention.etage & "," & uneIntervention.porte & ",'" & uneIntervention.bat & "'," & uneIntervention.code & ",'" & uneIntervention.commentaire & "'," & uneIntervention.sin & "," & uneIntervention.commune & ",'" & uneIntervention.sinobserv & "'," & demand_id & ");")
+
+            Me.Close()
+        Catch ex As Exception
+            MessageBox.Show("Verifier les champs obligatoires")
+        End Try
         
-
-        'INTERVENTION
-        query = Connexion.ORA.Table("SELECT COUNT(*) FROM INTERVENTION")
-        Dim interv_id As Integer = query.Rows(0)("COUNT(*)") + 1
-
-        'Verif si exterieur
-        Dim IntervExt As Integer
-        If LocalCheckBox.Checked Then
-            IntervExt = 1
-        Else
-            IntervExt = 0
-        End If
-
-        'Insertion des données
-        Dim uneIntervention As New Intervention(interv_id, LocaLieuTextBox.Text, LocaNoTextBox.Text, IntervExt, LocaEtageTextBox.Text, LocaAppTextBox.Text, LocaBatTextBox.Text, LocaCodeTextBox.Text, LocaPreTextBox.Text, sinistreTextBox.Text, Format(Today.Date, "dd/MM/yy"), LocaComTextBox.Text, sinistreTextBox2.Text, demand_id)
-        Connexion.ORA.Execute("INSERT INTO INTERVENTION VALUES (" & interv_id & ",'" & uneIntervention.lieu & "'," & uneIntervention.no & "," & uneIntervention.ext & "," & uneIntervention.etage & "," & uneIntervention.porte & ",'" & uneIntervention.bat & "'," & uneIntervention.code & ",'" & uneIntervention.commentaire & "','" & uneIntervention.statut & "'," & uneIntervention.sin & ",TO_DATE('" & uneIntervention.dte & "','DD-MM-YY')," & uneIntervention.commune & ",'" & uneIntervention.sinobserv & "'," & demand_id & ");")
-
-        Me.Close()
     End Sub
 
 
