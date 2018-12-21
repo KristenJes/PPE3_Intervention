@@ -22,9 +22,8 @@ Partial Class RapportIntervention
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txtNumInterv = New System.Windows.Forms.TextBox()
+        Me.components = New System.ComponentModel.Container()
         Me.txtDteInterv = New System.Windows.Forms.TextBox()
-        Me.txtNumSinistre = New System.Windows.Forms.TextBox()
         Me.txtLibSinistre = New System.Windows.Forms.TextBox()
         Me.txtCommInterv = New System.Windows.Forms.TextBox()
         Me.lblNumInterv = New System.Windows.Forms.Label()
@@ -39,9 +38,6 @@ Partial Class RapportIntervention
         Me.lblNbKm = New System.Windows.Forms.Label()
         Me.lblDteRetour = New System.Windows.Forms.Label()
         Me.lblDteDep = New System.Windows.Forms.Label()
-        Me.txtCentre = New System.Windows.Forms.TextBox()
-        Me.txtTypeEngin = New System.Windows.Forms.TextBox()
-        Me.txtEngin = New System.Windows.Forms.TextBox()
         Me.txtNumDep = New System.Windows.Forms.TextBox()
         Me.lblCentre = New System.Windows.Forms.Label()
         Me.lblTypeEngin = New System.Windows.Forms.Label()
@@ -49,29 +45,50 @@ Partial Class RapportIntervention
         Me.lblNumDep = New System.Windows.Forms.Label()
         Me.btnValider = New System.Windows.Forms.Button()
         Me.panDep = New System.Windows.Forms.GroupBox()
-        Me.lblComp1 = New System.Windows.Forms.Label()
-        Me.lblComp3 = New System.Windows.Forms.Label()
-        Me.lblComp5 = New System.Windows.Forms.Label()
-        Me.lblComp2 = New System.Windows.Forms.Label()
-        Me.lblComp4 = New System.Windows.Forms.Label()
-        Me.lblComp6 = New System.Windows.Forms.Label()
-        Me.txtComp1 = New System.Windows.Forms.TextBox()
-        Me.txtComp3 = New System.Windows.Forms.TextBox()
-        Me.txtComp5 = New System.Windows.Forms.TextBox()
-        Me.txtComp2 = New System.Windows.Forms.TextBox()
-        Me.txtComp4 = New System.Windows.Forms.TextBox()
-        Me.txtComp6 = New System.Windows.Forms.TextBox()
+        Me.CBoxEngin = New System.Windows.Forms.ComboBox()
+        Me.CBoxCentre = New System.Windows.Forms.ComboBox()
+        Me.CASERNEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSetSDIS = New PPEIntervention.DataSetSDIS()
+        Me.CBoxTypeEngin = New System.Windows.Forms.ComboBox()
+        Me.TYPEENGINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnValiderDep = New System.Windows.Forms.Button()
         Me.panComp = New System.Windows.Forms.GroupBox()
+        Me.txtComp6 = New System.Windows.Forms.TextBox()
+        Me.txtComp4 = New System.Windows.Forms.TextBox()
+        Me.txtComp2 = New System.Windows.Forms.TextBox()
+        Me.txtComp5 = New System.Windows.Forms.TextBox()
+        Me.txtComp3 = New System.Windows.Forms.TextBox()
+        Me.txtComp1 = New System.Windows.Forms.TextBox()
+        Me.lblComp6 = New System.Windows.Forms.Label()
+        Me.lblComp4 = New System.Windows.Forms.Label()
+        Me.lblComp2 = New System.Windows.Forms.Label()
+        Me.lblComp5 = New System.Windows.Forms.Label()
+        Me.lblComp3 = New System.Windows.Forms.Label()
+        Me.lblComp1 = New System.Windows.Forms.Label()
+        Me.INTERVENTIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.INTERVENTIONTableAdapter = New PPEIntervention.DataSetSDISTableAdapters.INTERVENTIONTableAdapter()
+        Me.INTERVENTIONBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TYPE_ENGINTableAdapter = New PPEIntervention.DataSetSDISTableAdapters.TYPE_ENGINTableAdapter()
+        Me.CASERNETableAdapter = New PPEIntervention.DataSetSDISTableAdapters.CASERNETableAdapter()
+        Me.SelCenOrderedToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.SelCenOrderedToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.ENGINBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ENGINTableAdapter = New PPEIntervention.DataSetSDISTableAdapters.ENGINTableAdapter()
+        Me.txtNumInterv = New System.Windows.Forms.TextBox()
+        Me.CBoxNumSinistre = New System.Windows.Forms.ComboBox()
+        Me.SINISTREBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SINISTRETableAdapter = New PPEIntervention.DataSetSDISTableAdapters.SINISTRETableAdapter()
         Me.panDep.SuspendLayout()
+        CType(Me.CASERNEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetSDIS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TYPEENGINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panComp.SuspendLayout()
+        CType(Me.INTERVENTIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.INTERVENTIONBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SelCenOrderedToolStrip.SuspendLayout()
+        CType(Me.ENGINBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SINISTREBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'txtNumInterv
-        '
-        Me.txtNumInterv.Location = New System.Drawing.Point(101, 12)
-        Me.txtNumInterv.Name = "txtNumInterv"
-        Me.txtNumInterv.Size = New System.Drawing.Size(48, 20)
-        Me.txtNumInterv.TabIndex = 0
         '
         'txtDteInterv
         '
@@ -79,13 +96,6 @@ Partial Class RapportIntervention
         Me.txtDteInterv.Name = "txtDteInterv"
         Me.txtDteInterv.Size = New System.Drawing.Size(132, 20)
         Me.txtDteInterv.TabIndex = 1
-        '
-        'txtNumSinistre
-        '
-        Me.txtNumSinistre.Location = New System.Drawing.Point(413, 12)
-        Me.txtNumSinistre.Name = "txtNumSinistre"
-        Me.txtNumSinistre.Size = New System.Drawing.Size(45, 20)
-        Me.txtNumSinistre.TabIndex = 2
         '
         'txtLibSinistre
         '
@@ -143,7 +153,7 @@ Partial Class RapportIntervention
         Me.txtCommDep.Location = New System.Drawing.Point(95, 242)
         Me.txtCommDep.Multiline = True
         Me.txtCommDep.Name = "txtCommDep"
-        Me.txtCommDep.Size = New System.Drawing.Size(520, 45)
+        Me.txtCommDep.Size = New System.Drawing.Size(523, 45)
         Me.txtCommDep.TabIndex = 15
         '
         'txtNbKm
@@ -203,27 +213,6 @@ Partial Class RapportIntervention
         Me.lblDteDep.TabIndex = 8
         Me.lblDteDep.Text = "Départ le"
         '
-        'txtCentre
-        '
-        Me.txtCentre.Location = New System.Drawing.Point(524, 57)
-        Me.txtCentre.Name = "txtCentre"
-        Me.txtCentre.Size = New System.Drawing.Size(114, 20)
-        Me.txtCentre.TabIndex = 7
-        '
-        'txtTypeEngin
-        '
-        Me.txtTypeEngin.Location = New System.Drawing.Point(332, 57)
-        Me.txtTypeEngin.Name = "txtTypeEngin"
-        Me.txtTypeEngin.Size = New System.Drawing.Size(122, 20)
-        Me.txtTypeEngin.TabIndex = 6
-        '
-        'txtEngin
-        '
-        Me.txtEngin.Location = New System.Drawing.Point(95, 57)
-        Me.txtEngin.Name = "txtEngin"
-        Me.txtEngin.Size = New System.Drawing.Size(150, 20)
-        Me.txtEngin.TabIndex = 5
-        '
         'txtNumDep
         '
         Me.txtNumDep.Location = New System.Drawing.Point(95, 23)
@@ -269,7 +258,7 @@ Partial Class RapportIntervention
         '
         'btnValider
         '
-        Me.btnValider.Location = New System.Drawing.Point(583, 441)
+        Me.btnValider.Location = New System.Drawing.Point(583, 468)
         Me.btnValider.Name = "btnValider"
         Me.btnValider.Size = New System.Drawing.Size(75, 23)
         Me.btnValider.TabIndex = 10
@@ -278,9 +267,12 @@ Partial Class RapportIntervention
         '
         'panDep
         '
+        Me.panDep.Controls.Add(Me.CBoxEngin)
+        Me.panDep.Controls.Add(Me.CBoxCentre)
+        Me.panDep.Controls.Add(Me.CBoxTypeEngin)
+        Me.panDep.Controls.Add(Me.btnValiderDep)
         Me.panDep.Controls.Add(Me.panComp)
         Me.panDep.Controls.Add(Me.txtCommDep)
-        Me.panDep.Controls.Add(Me.txtEngin)
         Me.panDep.Controls.Add(Me.lblCommDep)
         Me.panDep.Controls.Add(Me.txtNbKm)
         Me.panDep.Controls.Add(Me.lblNumDep)
@@ -291,112 +283,66 @@ Partial Class RapportIntervention
         Me.panDep.Controls.Add(Me.txtNumDep)
         Me.panDep.Controls.Add(Me.lblEngin)
         Me.panDep.Controls.Add(Me.lblTypeEngin)
-        Me.panDep.Controls.Add(Me.txtTypeEngin)
         Me.panDep.Controls.Add(Me.lblCentre)
         Me.panDep.Controls.Add(Me.lblDteDep)
-        Me.panDep.Controls.Add(Me.txtCentre)
         Me.panDep.Location = New System.Drawing.Point(6, 134)
         Me.panDep.Name = "panDep"
-        Me.panDep.Size = New System.Drawing.Size(652, 301)
+        Me.panDep.Size = New System.Drawing.Size(664, 336)
         Me.panDep.TabIndex = 11
         Me.panDep.TabStop = False
         Me.panDep.Text = "Départ"
         '
-        'lblComp1
+        'CBoxEngin
         '
-        Me.lblComp1.AutoSize = True
-        Me.lblComp1.Location = New System.Drawing.Point(10, 27)
-        Me.lblComp1.Name = "lblComp1"
-        Me.lblComp1.Size = New System.Drawing.Size(54, 13)
-        Me.lblComp1.TabIndex = 0
-        Me.lblComp1.Text = "Membre 1"
+        Me.CBoxEngin.DisplayMember = "ENGIN_ID"
+        Me.CBoxEngin.FormattingEnabled = True
+        Me.CBoxEngin.Location = New System.Drawing.Point(95, 57)
+        Me.CBoxEngin.Name = "CBoxEngin"
+        Me.CBoxEngin.Size = New System.Drawing.Size(150, 21)
+        Me.CBoxEngin.TabIndex = 20
+        Me.CBoxEngin.ValueMember = "ENGIN_ID"
         '
-        'lblComp3
+        'CBoxCentre
         '
-        Me.lblComp3.AutoSize = True
-        Me.lblComp3.Location = New System.Drawing.Point(10, 59)
-        Me.lblComp3.Name = "lblComp3"
-        Me.lblComp3.Size = New System.Drawing.Size(54, 13)
-        Me.lblComp3.TabIndex = 1
-        Me.lblComp3.Text = "Membre 3"
+        Me.CBoxCentre.DataSource = Me.CASERNEBindingSource
+        Me.CBoxCentre.FormattingEnabled = True
+        Me.CBoxCentre.Location = New System.Drawing.Point(523, 57)
+        Me.CBoxCentre.Name = "CBoxCentre"
+        Me.CBoxCentre.Size = New System.Drawing.Size(121, 21)
+        Me.CBoxCentre.TabIndex = 19
         '
-        'lblComp5
+        'CASERNEBindingSource
         '
-        Me.lblComp5.AutoSize = True
-        Me.lblComp5.Location = New System.Drawing.Point(10, 91)
-        Me.lblComp5.Name = "lblComp5"
-        Me.lblComp5.Size = New System.Drawing.Size(54, 13)
-        Me.lblComp5.TabIndex = 2
-        Me.lblComp5.Text = "Membre 5"
+        Me.CASERNEBindingSource.DataMember = "CASERNE"
+        Me.CASERNEBindingSource.DataSource = Me.DataSetSDIS
         '
-        'lblComp2
+        'DataSetSDIS
         '
-        Me.lblComp2.AutoSize = True
-        Me.lblComp2.Location = New System.Drawing.Point(196, 27)
-        Me.lblComp2.Name = "lblComp2"
-        Me.lblComp2.Size = New System.Drawing.Size(54, 13)
-        Me.lblComp2.TabIndex = 4
-        Me.lblComp2.Text = "Membre 2"
+        Me.DataSetSDIS.DataSetName = "DataSetSDIS"
+        Me.DataSetSDIS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'lblComp4
+        'CBoxTypeEngin
         '
-        Me.lblComp4.AutoSize = True
-        Me.lblComp4.Location = New System.Drawing.Point(196, 59)
-        Me.lblComp4.Name = "lblComp4"
-        Me.lblComp4.Size = New System.Drawing.Size(54, 13)
-        Me.lblComp4.TabIndex = 5
-        Me.lblComp4.Text = "Membre 4"
+        Me.CBoxTypeEngin.DataSource = Me.TYPEENGINBindingSource
+        Me.CBoxTypeEngin.FormattingEnabled = True
+        Me.CBoxTypeEngin.Location = New System.Drawing.Point(332, 57)
+        Me.CBoxTypeEngin.Name = "CBoxTypeEngin"
+        Me.CBoxTypeEngin.Size = New System.Drawing.Size(121, 21)
+        Me.CBoxTypeEngin.TabIndex = 18
         '
-        'lblComp6
+        'TYPEENGINBindingSource
         '
-        Me.lblComp6.AutoSize = True
-        Me.lblComp6.Location = New System.Drawing.Point(196, 91)
-        Me.lblComp6.Name = "lblComp6"
-        Me.lblComp6.Size = New System.Drawing.Size(54, 13)
-        Me.lblComp6.TabIndex = 6
-        Me.lblComp6.Text = "Membre 6"
+        Me.TYPEENGINBindingSource.DataMember = "TYPE_ENGIN"
+        Me.TYPEENGINBindingSource.DataSource = Me.DataSetSDIS
         '
-        'txtComp1
+        'btnValiderDep
         '
-        Me.txtComp1.Location = New System.Drawing.Point(70, 24)
-        Me.txtComp1.Name = "txtComp1"
-        Me.txtComp1.Size = New System.Drawing.Size(100, 20)
-        Me.txtComp1.TabIndex = 8
-        '
-        'txtComp3
-        '
-        Me.txtComp3.Location = New System.Drawing.Point(70, 56)
-        Me.txtComp3.Name = "txtComp3"
-        Me.txtComp3.Size = New System.Drawing.Size(100, 20)
-        Me.txtComp3.TabIndex = 9
-        '
-        'txtComp5
-        '
-        Me.txtComp5.Location = New System.Drawing.Point(70, 88)
-        Me.txtComp5.Name = "txtComp5"
-        Me.txtComp5.Size = New System.Drawing.Size(100, 20)
-        Me.txtComp5.TabIndex = 10
-        '
-        'txtComp2
-        '
-        Me.txtComp2.Location = New System.Drawing.Point(256, 24)
-        Me.txtComp2.Name = "txtComp2"
-        Me.txtComp2.Size = New System.Drawing.Size(100, 20)
-        Me.txtComp2.TabIndex = 12
-        '
-        'txtComp4
-        '
-        Me.txtComp4.Location = New System.Drawing.Point(256, 56)
-        Me.txtComp4.Name = "txtComp4"
-        Me.txtComp4.Size = New System.Drawing.Size(100, 20)
-        Me.txtComp4.TabIndex = 13
-        '
-        'txtComp6
-        '
-        Me.txtComp6.Location = New System.Drawing.Point(256, 88)
-        Me.txtComp6.Name = "txtComp6"
-        Me.txtComp6.Size = New System.Drawing.Size(100, 20)
-        Me.txtComp6.TabIndex = 14
+        Me.btnValiderDep.Location = New System.Drawing.Point(523, 293)
+        Me.btnValiderDep.Name = "btnValiderDep"
+        Me.btnValiderDep.Size = New System.Drawing.Size(95, 23)
+        Me.btnValiderDep.TabIndex = 17
+        Me.btnValiderDep.Text = "Valider Départ"
+        Me.btnValiderDep.UseVisualStyleBackColor = True
         '
         'panComp
         '
@@ -419,11 +365,182 @@ Partial Class RapportIntervention
         Me.panComp.TabStop = False
         Me.panComp.Text = "Composition de l'engin"
         '
+        'txtComp6
+        '
+        Me.txtComp6.Location = New System.Drawing.Point(256, 88)
+        Me.txtComp6.Name = "txtComp6"
+        Me.txtComp6.Size = New System.Drawing.Size(100, 20)
+        Me.txtComp6.TabIndex = 14
+        '
+        'txtComp4
+        '
+        Me.txtComp4.Location = New System.Drawing.Point(256, 56)
+        Me.txtComp4.Name = "txtComp4"
+        Me.txtComp4.Size = New System.Drawing.Size(100, 20)
+        Me.txtComp4.TabIndex = 13
+        '
+        'txtComp2
+        '
+        Me.txtComp2.Location = New System.Drawing.Point(256, 24)
+        Me.txtComp2.Name = "txtComp2"
+        Me.txtComp2.Size = New System.Drawing.Size(100, 20)
+        Me.txtComp2.TabIndex = 12
+        '
+        'txtComp5
+        '
+        Me.txtComp5.Location = New System.Drawing.Point(70, 88)
+        Me.txtComp5.Name = "txtComp5"
+        Me.txtComp5.Size = New System.Drawing.Size(100, 20)
+        Me.txtComp5.TabIndex = 10
+        '
+        'txtComp3
+        '
+        Me.txtComp3.Location = New System.Drawing.Point(70, 56)
+        Me.txtComp3.Name = "txtComp3"
+        Me.txtComp3.Size = New System.Drawing.Size(100, 20)
+        Me.txtComp3.TabIndex = 9
+        '
+        'txtComp1
+        '
+        Me.txtComp1.Location = New System.Drawing.Point(70, 24)
+        Me.txtComp1.Name = "txtComp1"
+        Me.txtComp1.Size = New System.Drawing.Size(100, 20)
+        Me.txtComp1.TabIndex = 8
+        '
+        'lblComp6
+        '
+        Me.lblComp6.AutoSize = True
+        Me.lblComp6.Location = New System.Drawing.Point(196, 91)
+        Me.lblComp6.Name = "lblComp6"
+        Me.lblComp6.Size = New System.Drawing.Size(54, 13)
+        Me.lblComp6.TabIndex = 6
+        Me.lblComp6.Text = "Membre 6"
+        '
+        'lblComp4
+        '
+        Me.lblComp4.AutoSize = True
+        Me.lblComp4.Location = New System.Drawing.Point(196, 59)
+        Me.lblComp4.Name = "lblComp4"
+        Me.lblComp4.Size = New System.Drawing.Size(54, 13)
+        Me.lblComp4.TabIndex = 5
+        Me.lblComp4.Text = "Membre 4"
+        '
+        'lblComp2
+        '
+        Me.lblComp2.AutoSize = True
+        Me.lblComp2.Location = New System.Drawing.Point(196, 27)
+        Me.lblComp2.Name = "lblComp2"
+        Me.lblComp2.Size = New System.Drawing.Size(54, 13)
+        Me.lblComp2.TabIndex = 4
+        Me.lblComp2.Text = "Membre 2"
+        '
+        'lblComp5
+        '
+        Me.lblComp5.AutoSize = True
+        Me.lblComp5.Location = New System.Drawing.Point(10, 91)
+        Me.lblComp5.Name = "lblComp5"
+        Me.lblComp5.Size = New System.Drawing.Size(54, 13)
+        Me.lblComp5.TabIndex = 2
+        Me.lblComp5.Text = "Membre 5"
+        '
+        'lblComp3
+        '
+        Me.lblComp3.AutoSize = True
+        Me.lblComp3.Location = New System.Drawing.Point(10, 59)
+        Me.lblComp3.Name = "lblComp3"
+        Me.lblComp3.Size = New System.Drawing.Size(54, 13)
+        Me.lblComp3.TabIndex = 1
+        Me.lblComp3.Text = "Membre 3"
+        '
+        'lblComp1
+        '
+        Me.lblComp1.AutoSize = True
+        Me.lblComp1.Location = New System.Drawing.Point(10, 27)
+        Me.lblComp1.Name = "lblComp1"
+        Me.lblComp1.Size = New System.Drawing.Size(54, 13)
+        Me.lblComp1.TabIndex = 0
+        Me.lblComp1.Text = "Membre 1"
+        '
+        'INTERVENTIONBindingSource
+        '
+        Me.INTERVENTIONBindingSource.DataMember = "INTERVENTION"
+        Me.INTERVENTIONBindingSource.DataSource = Me.DataSetSDIS
+        '
+        'INTERVENTIONTableAdapter
+        '
+        Me.INTERVENTIONTableAdapter.ClearBeforeFill = True
+        '
+        'INTERVENTIONBindingSource1
+        '
+        Me.INTERVENTIONBindingSource1.DataMember = "INTERVENTION"
+        Me.INTERVENTIONBindingSource1.DataSource = Me.DataSetSDIS
+        '
+        'TYPE_ENGINTableAdapter
+        '
+        Me.TYPE_ENGINTableAdapter.ClearBeforeFill = True
+        '
+        'CASERNETableAdapter
+        '
+        Me.CASERNETableAdapter.ClearBeforeFill = True
+        '
+        'SelCenOrderedToolStrip
+        '
+        Me.SelCenOrderedToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SelCenOrderedToolStripButton})
+        Me.SelCenOrderedToolStrip.Location = New System.Drawing.Point(0, 0)
+        Me.SelCenOrderedToolStrip.Name = "SelCenOrderedToolStrip"
+        Me.SelCenOrderedToolStrip.Size = New System.Drawing.Size(679, 25)
+        Me.SelCenOrderedToolStrip.TabIndex = 13
+        Me.SelCenOrderedToolStrip.Text = "SelCenOrderedToolStrip"
+        '
+        'SelCenOrderedToolStripButton
+        '
+        Me.SelCenOrderedToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.SelCenOrderedToolStripButton.Name = "SelCenOrderedToolStripButton"
+        Me.SelCenOrderedToolStripButton.Size = New System.Drawing.Size(90, 22)
+        Me.SelCenOrderedToolStripButton.Text = "SelCenOrdered"
+        '
+        'ENGINBindingSource
+        '
+        Me.ENGINBindingSource.DataMember = "ENGIN"
+        Me.ENGINBindingSource.DataSource = Me.DataSetSDIS
+        '
+        'ENGINTableAdapter
+        '
+        Me.ENGINTableAdapter.ClearBeforeFill = True
+        '
+        'txtNumInterv
+        '
+        Me.txtNumInterv.Location = New System.Drawing.Point(76, 12)
+        Me.txtNumInterv.Name = "txtNumInterv"
+        Me.txtNumInterv.Size = New System.Drawing.Size(100, 20)
+        Me.txtNumInterv.TabIndex = 14
+        '
+        'CBoxNumSinistre
+        '
+        Me.CBoxNumSinistre.DataSource = Me.SINISTREBindingSource
+        Me.CBoxNumSinistre.DisplayMember = "SIN_ID"
+        Me.CBoxNumSinistre.FormattingEnabled = True
+        Me.CBoxNumSinistre.Location = New System.Drawing.Point(412, 12)
+        Me.CBoxNumSinistre.Name = "CBoxNumSinistre"
+        Me.CBoxNumSinistre.Size = New System.Drawing.Size(45, 21)
+        Me.CBoxNumSinistre.TabIndex = 15
+        Me.CBoxNumSinistre.ValueMember = "SIN_ID"
+        '
+        'SINISTREBindingSource
+        '
+        Me.SINISTREBindingSource.DataMember = "SINISTRE"
+        Me.SINISTREBindingSource.DataSource = Me.DataSetSDIS
+        '
+        'SINISTRETableAdapter
+        '
+        Me.SINISTRETableAdapter.ClearBeforeFill = True
+        '
         'RapportIntervention
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(679, 473)
+        Me.ClientSize = New System.Drawing.Size(679, 503)
+        Me.Controls.Add(Me.SelCenOrderedToolStrip)
         Me.Controls.Add(Me.btnValider)
         Me.Controls.Add(Me.panDep)
         Me.Controls.Add(Me.lblCommInterv)
@@ -432,22 +549,29 @@ Partial Class RapportIntervention
         Me.Controls.Add(Me.lblNumInterv)
         Me.Controls.Add(Me.txtCommInterv)
         Me.Controls.Add(Me.txtLibSinistre)
-        Me.Controls.Add(Me.txtNumSinistre)
         Me.Controls.Add(Me.txtDteInterv)
         Me.Controls.Add(Me.txtNumInterv)
+        Me.Controls.Add(Me.CBoxNumSinistre)
         Me.Name = "RapportIntervention"
         Me.Text = "INTERVENTION"
         Me.panDep.ResumeLayout(False)
         Me.panDep.PerformLayout()
+        CType(Me.CASERNEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetSDIS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TYPEENGINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panComp.ResumeLayout(False)
         Me.panComp.PerformLayout()
+        CType(Me.INTERVENTIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.INTERVENTIONBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SelCenOrderedToolStrip.ResumeLayout(False)
+        Me.SelCenOrderedToolStrip.PerformLayout()
+        CType(Me.ENGINBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SINISTREBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txtNumInterv As System.Windows.Forms.TextBox
     Friend WithEvents txtDteInterv As System.Windows.Forms.TextBox
-    Friend WithEvents txtNumSinistre As System.Windows.Forms.TextBox
     Friend WithEvents txtLibSinistre As System.Windows.Forms.TextBox
     Friend WithEvents txtCommInterv As System.Windows.Forms.TextBox
     Friend WithEvents lblNumInterv As System.Windows.Forms.Label
@@ -462,9 +586,6 @@ Partial Class RapportIntervention
     Friend WithEvents lblNbKm As System.Windows.Forms.Label
     Friend WithEvents lblDteRetour As System.Windows.Forms.Label
     Friend WithEvents lblDteDep As System.Windows.Forms.Label
-    Friend WithEvents txtCentre As System.Windows.Forms.TextBox
-    Friend WithEvents txtTypeEngin As System.Windows.Forms.TextBox
-    Friend WithEvents txtEngin As System.Windows.Forms.TextBox
     Friend WithEvents txtNumDep As System.Windows.Forms.TextBox
     Friend WithEvents lblCentre As System.Windows.Forms.Label
     Friend WithEvents lblTypeEngin As System.Windows.Forms.Label
@@ -485,5 +606,25 @@ Partial Class RapportIntervention
     Friend WithEvents lblComp5 As System.Windows.Forms.Label
     Friend WithEvents lblComp3 As System.Windows.Forms.Label
     Friend WithEvents lblComp1 As System.Windows.Forms.Label
+    Friend WithEvents DataSetSDIS As PPEIntervention.DataSetSDIS
+    Friend WithEvents INTERVENTIONBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents INTERVENTIONTableAdapter As PPEIntervention.DataSetSDISTableAdapters.INTERVENTIONTableAdapter
+    Friend WithEvents btnValiderDep As System.Windows.Forms.Button
+    Friend WithEvents CBoxTypeEngin As System.Windows.Forms.ComboBox
+    Friend WithEvents TYPEENGINBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents TYPE_ENGINTableAdapter As PPEIntervention.DataSetSDISTableAdapters.TYPE_ENGINTableAdapter
+    Friend WithEvents CBoxCentre As System.Windows.Forms.ComboBox
+    Friend WithEvents CASERNEBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents CASERNETableAdapter As PPEIntervention.DataSetSDISTableAdapters.CASERNETableAdapter
+    Friend WithEvents SelCenOrderedToolStrip As System.Windows.Forms.ToolStrip
+    Friend WithEvents SelCenOrderedToolStripButton As System.Windows.Forms.ToolStripButton
+    Friend WithEvents CBoxEngin As System.Windows.Forms.ComboBox
+    Friend WithEvents INTERVENTIONBindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents ENGINBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents ENGINTableAdapter As PPEIntervention.DataSetSDISTableAdapters.ENGINTableAdapter
+    Friend WithEvents txtNumInterv As System.Windows.Forms.TextBox
+    Friend WithEvents CBoxNumSinistre As System.Windows.Forms.ComboBox
+    Friend WithEvents SINISTREBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents SINISTRETableAdapter As PPEIntervention.DataSetSDISTableAdapters.SINISTRETableAdapter
 
 End Class

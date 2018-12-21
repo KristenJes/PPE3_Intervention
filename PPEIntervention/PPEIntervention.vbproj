@@ -72,6 +72,11 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetSDIS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSDIS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RapportIntervention.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +112,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSetSDIS.xsc">
+      <DependentUpon>DataSetSDIS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSDIS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSDIS.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetSDIS.xss">
+      <DependentUpon>DataSetSDIS.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
