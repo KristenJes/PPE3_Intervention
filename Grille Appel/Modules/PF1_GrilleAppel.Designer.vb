@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class PF1_GrilleAppel
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PF1_GrilleAppel))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.sinistreComboBox = New System.Windows.Forms.ComboBox()
         Me.sinistreTextBox2 = New System.Windows.Forms.TextBox()
@@ -85,8 +86,6 @@ Partial Class Form1
         Me.COMMUNETableAdapter = New Grille_Appel.DataSet1TableAdapters.COMMUNETableAdapter()
         Me.Envoyer = New System.Windows.Forms.Button()
         Me.DataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.error1 = New System.Windows.Forms.Label()
-        Me.error2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.SINISTREBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -640,38 +639,19 @@ Partial Class Form1
         Me.DataSet1BindingSource.DataSource = Me.DataSet1
         Me.DataSet1BindingSource.Position = 0
         '
-        'error1
-        '
-        Me.error1.AutoSize = True
-        Me.error1.Location = New System.Drawing.Point(92, 289)
-        Me.error1.Name = "error1"
-        Me.error1.Size = New System.Drawing.Size(45, 13)
-        Me.error1.TabIndex = 18
-        Me.error1.Text = "Label25"
-        '
-        'error2
-        '
-        Me.error2.AutoSize = True
-        Me.error2.Location = New System.Drawing.Point(33, 514)
-        Me.error2.Name = "error2"
-        Me.error2.Size = New System.Drawing.Size(45, 13)
-        Me.error2.TabIndex = 21
-        Me.error2.Text = "Label26"
-        '
-        'Form1
+        'PF1_GrilleAppel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(574, 681)
-        Me.Controls.Add(Me.error1)
-        Me.Controls.Add(Me.error2)
         Me.Controls.Add(Me.Envoyer)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "PF1_GrilleAppel"
+        Me.Text = "Grille d'Appel"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.SINISTREBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -685,7 +665,6 @@ Partial Class Form1
         Me.GroupBox4.PerformLayout()
         CType(Me.DataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -750,7 +729,5 @@ Partial Class Form1
     Friend WithEvents DepartListBox As System.Windows.Forms.ListBox
     Friend WithEvents Envoyer As System.Windows.Forms.Button
     Friend WithEvents DataSet1BindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents error1 As System.Windows.Forms.Label
-    Friend WithEvents error2 As System.Windows.Forms.Label
 
 End Class

@@ -1,5 +1,5 @@
-﻿Public Class Form1
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+﻿Public Class PF1_GrilleAppel
+    Private Sub PF1_GrilleAppel_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Dim query As DataTable = Connexion.ORA.Table("SELECT NOM_COMMUNE FROM COMMUNE;")
         For Each NomCommune In query.Rows
@@ -106,11 +106,15 @@
             Connexion.ORA.Execute("INSERT INTO INTERVENTION (INTERV_ID, INTERV_LIEU, INTERV_NO, INTERV_EXT, INTERV_ETAGE, INTERV_PORTE, INTERV_BAT, INTERV_CODE, INTERV_COMMENTAIRE, INTERV_SIN_ID, INTERV_COMMUNE,SIN_OBSERVATION, DEMAND_ID) VALUES (" & interv_id & ",'" & uneIntervention.lieu & "'," & uneIntervention.no & "," & uneIntervention.ext & "," & uneIntervention.etage & "," & uneIntervention.porte & ",'" & uneIntervention.bat & "'," & uneIntervention.code & ",'" & uneIntervention.commentaire & "'," & uneIntervention.sin & "," & uneIntervention.commune & ",'" & uneIntervention.sinobserv & "'," & demand_id & ");")
 
             Me.Close()
+            CTA.Show()
+
         Catch ex As Exception
             MessageBox.Show("Verifier les champs obligatoires")
         End Try
-        
-    End Sub
 
+    End Sub
+    Private Sub PF1_GrilleAppel_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
+        CTA.Show()
+    End Sub
 
 End Class
