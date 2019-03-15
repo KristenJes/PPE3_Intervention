@@ -88,30 +88,30 @@
     <Import Include="System.Xml.Serialization.Advanced" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connexion.vb" />
-    <Compile Include="Statut.Designer.vb">
-      <DependentUpon>Statut.vb</DependentUpon>
+    <Compile Include="Classes\Connexion.vb" />
+    <Compile Include="Modules\PF3_Statut.Designer.vb">
+      <DependentUpon>PF3_Statut.vb</DependentUpon>
     </Compile>
-    <Compile Include="Statut.vb">
+    <Compile Include="Modules\PF3_Statut.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Renfort.Designer.vb">
-      <DependentUpon>Renfort.vb</DependentUpon>
+    <Compile Include="Modules\PF3_Renfort.Designer.vb">
+      <DependentUpon>PF3_Renfort.vb</DependentUpon>
     </Compile>
-    <Compile Include="Renfort.vb">
+    <Compile Include="Modules\PF3_Renfort.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectionIntervention.Designer.vb">
-      <DependentUpon>SelectionIntervention.vb</DependentUpon>
+    <Compile Include="Modules\PF3_SelectionIntervention.Designer.vb">
+      <DependentUpon>PF3_SelectionIntervention.vb</DependentUpon>
     </Compile>
-    <Compile Include="SelectionIntervention.vb">
+    <Compile Include="Modules\PF3_SelectionIntervention.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Intervention.vb">
+    <Compile Include="Modules\PF3_Intervention.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Intervention.Designer.vb">
-      <DependentUpon>Intervention.vb</DependentUpon>
+    <Compile Include="Modules\PF3_Intervention.Designer.vb">
+      <DependentUpon>PF3_Intervention.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -131,8 +131,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Intervention.resx">
-      <DependentUpon>Intervention.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\PF3_Intervention.resx">
+      <DependentUpon>PF3_Intervention.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -140,14 +140,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Renfort.resx">
-      <DependentUpon>Renfort.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\PF3_Renfort.resx">
+      <DependentUpon>PF3_Renfort.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectionIntervention.resx">
-      <DependentUpon>SelectionIntervention.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\PF3_SelectionIntervention.resx">
+      <DependentUpon>PF3_SelectionIntervention.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Statut.resx">
-      <DependentUpon>Statut.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\PF3_Statut.resx">
+      <DependentUpon>PF3_Statut.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

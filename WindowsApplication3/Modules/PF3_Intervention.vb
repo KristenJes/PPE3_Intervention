@@ -1,4 +1,4 @@
-﻿Public Class INTERVENTION
+﻿Public Class PF3_Intervention
 
     Dim OracleUtils As Connexion
     Dim idIntervention As String
@@ -69,7 +69,7 @@
         lblSP1.Hide()
         txtSP1.Hide()
 
-        idIntervention = SelectionIntervention.getInterventionID()
+        idIntervention = PF3_SelectionIntervention.getInterventionID()
 
         Try
             idIntervention = Integer.Parse(idIntervention)
@@ -126,7 +126,7 @@
             FinInterventionQuery = "UPDATE INTERVENTION SET STATUT_INTERV='TERMINE' WHERE INTERV_ID=" & idIntervention
             OracleUtils.Execute(FinInterventionQuery)
 
-            Dim SelectionIntervention As New SelectionIntervention
+            Dim SelectionIntervention As New PF3_SelectionIntervention
             SelectionIntervention.Show()
         End If
 
@@ -170,9 +170,9 @@
         Me.ajustIHM(resultSelectType.Rows(0)("TYPE_ENG_PLACES"))
 
 
-            'Fin requête état véhicule
+        'Fin requête état véhicule
 
-            'Début gestion affichage personnel
+        'Début gestion affichage personnel
 
 
 
@@ -184,7 +184,7 @@
     End Sub
 
     Private Sub btnModif_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModif.Click
-        Dim Statut As New Statut(vehiculeNom, vehiculeCS, labelInterName.Text)
+        Dim Statut As New PF3_Statut(vehiculeNom, vehiculeCS, labelInterName.Text)
         Statut.Show()
         Me.Hide()
 

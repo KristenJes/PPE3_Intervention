@@ -1,4 +1,4 @@
-﻿Public Class SelectionIntervention
+﻿Public Class PF3_SelectionIntervention
 
     Dim OracleUtils As Connexion
     Dim sdisQuery As String
@@ -35,7 +35,7 @@
         valeurComboBox = selectInterComboBox.SelectedValue.ToString
 
         interventionID = Split(valeurComboBox, "ID:")(1)
-        Dim Intervention As New INTERVENTION(interventionID, valeurComboBox)
+        Dim Intervention As New PF3_Intervention(interventionID, valeurComboBox)
 
         Intervention.labelInterName.Text = Split(valeurComboBox, "/")(0)
         Intervention.Show()

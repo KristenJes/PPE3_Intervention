@@ -1,4 +1,4 @@
-﻿Public Class Statut
+﻿Public Class PF3_Statut
 
     Dim OracleUtils As Connexion
     Dim sdisQuery As String
@@ -47,7 +47,7 @@
 
 
     Private Sub Statut_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        interventionID = SelectionIntervention.getInterventionID()
+        interventionID = PF3_SelectionIntervention.getInterventionID()
         Try
             interventionID = Integer.Parse(interventionID)
         Catch ex As Exception
@@ -80,7 +80,7 @@
         sdisQueryEtat = "UPDATE ENGIN SET ENGIN_ETAT='" & comboBoxStatutDesire.Text & "' WHERE ENGIN_NOM='" & _vehiculeNom & "' AND CIS_ID=(SELECT CIS_ID FROM CASERNE WHERE CIS_NOM='" & _vehiculeCS & "')"
 
         Try
-            Dim InterventionForm As New INTERVENTION(interventionID, _title)
+            Dim InterventionForm As New PF3_Intervention(interventionID, _title)
             OracleUtils.Execute(sdisQueryEtat)
             Me.Close()
             InterventionForm.Show()
