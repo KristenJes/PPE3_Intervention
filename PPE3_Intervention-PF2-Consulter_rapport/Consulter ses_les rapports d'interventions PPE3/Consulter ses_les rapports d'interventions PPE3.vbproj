@@ -76,17 +76,16 @@
   <ItemGroup>
     <Compile Include="Classes\connexion.vb" />
     <Compile Include="Classes\CurdIntervention.vb" />
-    <Compile Include="PF2_Consult_rapport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PF2_Consult_rapport.Designer.vb">
+    <Compile Include="Modules\PF2_Consult_rapport.Designer.vb">
       <DependentUpon>PF2_Consult_rapport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PF2_Consult_rapport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rapports.Designer.vb">
+    <Compile Include="Modules\Rapports.Designer.vb">
       <DependentUpon>Rapports.vb</DependentUpon>
     </Compile>
-    <Compile Include="Rapports.vb">
+    <Compile Include="Modules\Rapports.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -106,10 +105,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="PF2_Consult_rapport.resx">
+    <EmbeddedResource Include="Modules\PF2_Consult_rapport.resx">
       <DependentUpon>PF2_Consult_rapport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rapports.resx">
+    <EmbeddedResource Include="Modules\Rapports.resx">
       <DependentUpon>Rapports.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -133,6 +132,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
