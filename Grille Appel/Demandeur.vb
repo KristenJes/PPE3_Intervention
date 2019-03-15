@@ -1,24 +1,24 @@
-﻿Public Class Intervention
+﻿Public Class Demandeur
 
     Private _id As Integer
+    Private _nom As String
+    Private _prenom As String
+    Private _tel As String
     Private _lieu As String
     Private _No As String
     Private _Ext As String
     Private _Etage As String
     Private _Porte As String
     Private _Bat As String
+    Private _commentaire As String
     Private _Code As String
-    Private _Commentaire As String
-    'Private _statut As String
-    Private _sin As Integer
-    'Private _date As Date
-    Private _caserne As Integer
-    Private _sinobserv As String
-    Private _demandid As Integer
+    Private _CodeCommune As Integer
 
-    Public Sub New(ByVal id, ByVal unlieu, ByVal unno, ByVal unext, ByVal unetage, ByVal unporte, ByVal unbat, ByVal uncode, ByVal commentaire, ByVal unSinistre, ByVal uneCaserne, ByVal sinobserv, ByVal demandid)
+    Public Sub New(ByVal id, ByVal nom, ByVal prenom, ByVal tel, ByVal unlieu, ByVal unno, ByVal unext, ByVal unetage, ByVal unporte, ByVal unbat, ByVal uncode, ByVal commune, ByVal commentaire)
         _id = id
-        _lieu = lieu
+        _nom = nom
+        _prenom = prenom
+        _tel = tel
         lieu = unlieu
         no = unno
         ext = unext
@@ -26,73 +26,25 @@
         porte = unporte
         bat = unbat
         code = uncode
-        _Commentaire = commentaire
-        '_statut = "EN COURS"
-        _sin = unSinistre
-        ' _date = uneDate
-        _caserne = uneCaserne
-        _sinobserv = sinobserv
-        _demandid = demandid
+        _CodeCommune = commune
+        _commentaire = commentaire
     End Sub
-    Public Property demandid As Integer
-        Get
-            Return _demandid
-        End Get
-        Set(ByVal value As Integer)
-            _demandid = value
-        End Set
-    End Property
-
-    'Public Property statut As String
-    '    Get
-    '        Return _statut
-    '    End Get
-    '    Set(ByVal value As String)
-    '        _statut = value
-    '    End Set
-    'End Property
-
-    Public Property sinobserv As String
-        Get
-            Return _sinobserv
-        End Get
-        Set(ByVal value As String)
-                _sinobserv = value
-        End Set
-    End Property
-
-    Public Property caserne As Integer
-        Get
-            Return _caserne
-        End Get
-        Set(ByVal value As Integer)
-            _caserne = value
-        End Set
-    End Property
-    'Public Property dte As Date
-    '    Get
-    '        Return _date
-    '    End Get
-    '    Set(ByVal value As Date)
-    '        _date = value
-    '    End Set
-    'End Property
-
-    Public Property sin As Integer
-        Get
-            Return _sin
-        End Get
-        Set(ByVal value As Integer)
-            _sin = value
-        End Set
-    End Property
 
     Public Property commentaire As String
         Get
-            Return _Commentaire
+            Return _commentaire
         End Get
         Set(ByVal value As String)
-                _Commentaire = value
+            _commentaire = value
+        End Set
+    End Property
+
+    Public Property codecommune As Integer
+        Get
+            Return _CodeCommune
+        End Get
+        Set(ByVal value As Integer)
+            _CodeCommune = value
         End Set
     End Property
 
@@ -102,6 +54,33 @@
         End Get
         Set(ByVal value As Integer)
             _id = value
+        End Set
+    End Property
+
+    Public Property nom As String
+        Get
+            Return _nom
+        End Get
+        Set(ByVal value As String)
+            _nom = value
+        End Set
+    End Property
+
+    Public Property prenom As String
+        Get
+            Return _prenom
+        End Get
+        Set(ByVal value As String)
+            _prenom = value
+        End Set
+    End Property
+
+    Public Property tel As String
+        Get
+            Return _tel
+        End Get
+        Set(ByVal value As String)
+            _tel = value
         End Set
     End Property
 
@@ -192,4 +171,3 @@
         End Set
     End Property
 End Class
-

@@ -9,14 +9,14 @@
     Private _Bat As String
     Private _Code As String
     Private _Commentaire As String
-    'Private _statut As String
+    Private _statut As String
     Private _sin As Integer
-    'Private _date As Date
-    Private _caserne As Integer
+    Private _date As Date
+    Private _commune As Integer
     Private _sinobserv As String
     Private _demandid As Integer
 
-    Public Sub New(ByVal id, ByVal unlieu, ByVal unno, ByVal unext, ByVal unetage, ByVal unporte, ByVal unbat, ByVal uncode, ByVal commentaire, ByVal unSinistre, ByVal uneCaserne, ByVal sinobserv, ByVal demandid)
+    Public Sub New(ByVal id, ByVal unlieu, ByVal unno, ByVal unext, ByVal unetage, ByVal unporte, ByVal unbat, ByVal uncode, ByVal commentaire, ByVal unSinistre, ByVal uneDate, ByVal uneCommune, ByVal sinobserv, ByVal demandid)
         _id = id
         _lieu = lieu
         lieu = unlieu
@@ -27,10 +27,10 @@
         bat = unbat
         code = uncode
         _Commentaire = commentaire
-        '_statut = "EN COURS"
+        _statut = "test"
         _sin = unSinistre
-        ' _date = uneDate
-        _caserne = uneCaserne
+        _date = uneDate
+        _commune = uneCommune
         _sinobserv = sinobserv
         _demandid = demandid
     End Sub
@@ -43,14 +43,14 @@
         End Set
     End Property
 
-    'Public Property statut As String
-    '    Get
-    '        Return _statut
-    '    End Get
-    '    Set(ByVal value As String)
-    '        _statut = value
-    '    End Set
-    'End Property
+    Public Property statut As String
+        Get
+            Return _statut
+        End Get
+        Set(ByVal value As String)
+            _statut = value
+        End Set
+    End Property
 
     Public Property sinobserv As String
         Get
@@ -61,22 +61,22 @@
         End Set
     End Property
 
-    Public Property caserne As Integer
+    Public Property commune As Integer
         Get
-            Return _caserne
+            Return _commune
         End Get
         Set(ByVal value As Integer)
-            _caserne = value
+            _commune = value
         End Set
     End Property
-    'Public Property dte As Date
-    '    Get
-    '        Return _date
-    '    End Get
-    '    Set(ByVal value As Date)
-    '        _date = value
-    '    End Set
-    'End Property
+    Public Property dte As Date
+        Get
+            Return _date
+        End Get
+        Set(ByVal value As Date)
+            _date = value
+        End Set
+    End Property
 
     Public Property sin As Integer
         Get

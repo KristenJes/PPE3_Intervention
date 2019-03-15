@@ -1,10 +1,10 @@
 ﻿Public Class PF1_GrilleAppel
     Private Sub PF1_GrilleAppel_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        Dim query As DataTable = Connexion.ORA.Table("SELECT NOM_COMMUNE FROM COMMUNE;")
-        For Each NomCommune In query.Rows
-            localisationComboBox.Items.Add(NomCommune("NOM_COMMUNE"))
-            DemComboBox.Items.Add(NomCommune("NOM_COMMUNE"))
+        Dim query As DataTable = Connexion.ORA.Table("SELECT CIS_NOM FROM CASERNE;")
+        For Each NomCaserne In query.Rows
+            localisationComboBox.Items.Add(NomCaserne("CIS_NOM"))
+            DemComboBox.Items.Add(NomCaserne("CIS_NOM"))
         Next
 
         query = Connexion.ORA.Table("SELECT SIN_NATURE FROM SINISTRE;")
@@ -40,16 +40,16 @@
 
 
     Private Sub localisationComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles localisationComboBox.SelectedIndexChanged
-        Dim nomcommune As String = localisationComboBox.Text
-        Dim query As DataTable = Connexion.ORA.Table("SELECT CODE_COMMUNE FROM COMMUNE WHERE NOM_COMMUNE='" & nomcommune & "'")
-        LocaComTextBox.Text = query.Rows(0)("CODE_COMMUNE").ToString()
+        Dim nomcaserne As String = localisationComboBox.Text
+        Dim query As DataTable = Connexion.ORA.Table("SELECT CIS_ID FROM CASERNE WHERE CIS_NOM='" & nomcaserne & "'")
+        LocaComTextBox.Text = query.Rows(0)("CIS_ID").ToString()
     End Sub
 
 
     Private Sub DemComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DemComboBox.SelectedIndexChanged
-        Dim nomcommune As String = DemComboBox.Text
-        Dim query As DataTable = Connexion.ORA.Table("SELECT CODE_COMMUNE FROM COMMUNE WHERE NOM_COMMUNE='" & nomcommune & "'")
-        DemComTextBox.Text = query.Rows(0)("CODE_COMMUNE").ToString()
+        Dim nomcaserne As String = DemComboBox.Text
+        Dim query As DataTable = Connexion.ORA.Table("SELECT CIS_ID FROM CASERNE WHERE CIS_NOM='" & nomcaserne & "'")
+        DemComTextBox.Text = query.Rows(0)("CIS_ID").ToString()
     End Sub
 
 
@@ -85,13 +85,13 @@
 
             'Insertion des données
             Dim demande As New Demandeur(demand_id, NomTextBox.Text, PrenomTextBox.Text, TelTextBox.Text, DemLieuTextBox.Text, DemNoTextBox.Text, DemandExt, DemEtageTextBox.Text, DemPorteTextBox.Text, DemBatTextBox.Text, DemCodeTextBox.Text, DemComTextBox.Text, DemPreTextBox.Text)
-            Connexion.ORA.Execute("INSERT INTO DEMANDEUR (DEMAND_ID,DEMAND_NOM,DEMAND_PRENOM,DEMAND_TEL,DEMAND_LIEU,DEMAND_NO,DEMAND_EXT,DEMAND_ETAGE,DEMAND_PORTE,DEMAND_BAT,DEMAND_CODE,CODE_COMMUNE,DEMAND_COMMENTAIRE) VALUES (" & demand_id & ",'" & demande.nom & "','" & demande.prenom & "','" & demande.tel & "','" & demande.lieu & "'," & demande.no & "," & demande.ext & "," & demande.etage & "," & demande.porte & "," & demande.bat & "," & demande.code & "," & demande.codecommune & ",'" & demande.commentaire & "' );")
+            Connexion.ORA.Execute("INSERT INTO DEMANDEUR (DEMAND_ID,DEMAND_NOM,DEMAND_PRENOM,DEMAND_TEL,DEMAND_LIEU,DEMAND_NO,DEMAND_EXT,DEMAND_ETAGE,DEMAND_PORTE,DEMAND_BAT,DEMAND_CODE,DEMAND_COMMUNE,DEMAND_COMMENTAIRE) VALUES (" & demand_id & ",'" & demande.nom & "','" & demande.prenom & "','" & demande.tel & "','" & demande.lieu & "'," & demande.no & "," & demande.ext & "," & demande.etage & "," & demande.porte & "," & demande.bat & "," & demande.code & "," & demande.caserne & ",'" & demande.commentaire & "' );")
 
 
 
             'INTERVENTION
-            query = Connexion.ORA.Table("SELECT COUNT(*) FROM INTERVENTION")
-            Dim interv_id As Integer = query.Rows(0)("COUNT(*)") + 1
+            query = Connexion.ORA.Table("SELECT MAX(INTERV_ID) FROM INTERVENTION")
+            Dim interv_id As Integer = query.Rows(0)("MAX(INTERV_ID)") + 1
 
             'Verif si exterieur
             Dim IntervExt As Integer
@@ -103,18 +103,17 @@
 
             'Insertion des données
             Dim uneIntervention As New Intervention(interv_id, LocaLieuTextBox.Text, LocaNoTextBox.Text, IntervExt, LocaEtageTextBox.Text, LocaAppTextBox.Text, LocaBatTextBox.Text, LocaCodeTextBox.Text, LocaPreTextBox.Text, sinistreTextBox.Text, LocaComTextBox.Text, sinistreTextBox2.Text, demand_id)
-            Connexion.ORA.Execute("INSERT INTO INTERVENTION (INTERV_ID, INTERV_LIEU, INTERV_NO, INTERV_EXT, INTERV_ETAGE, INTERV_PORTE, INTERV_BAT, INTERV_CODE, INTERV_COMMENTAIRE, INTERV_SIN_ID, INTERV_COMMUNE,SIN_OBSERVATION, DEMAND_ID) VALUES (" & interv_id & ",'" & uneIntervention.lieu & "'," & uneIntervention.no & "," & uneIntervention.ext & "," & uneIntervention.etage & "," & uneIntervention.porte & ",'" & uneIntervention.bat & "'," & uneIntervention.code & ",'" & uneIntervention.commentaire & "'," & uneIntervention.sin & "," & uneIntervention.commune & ",'" & uneIntervention.sinobserv & "'," & demand_id & ");")
+            Connexion.ORA.Execute("INSERT INTO INTERVENTION (INTERV_ID, INTERV_LIEU, INTERV_NO, INTERV_EXT, INTERV_ETAGE, INTERV_PORTE, INTERV_BAT, INTERV_CODE, INTERV_COMMENTAIRE, INTERV_SIN_ID, INTERV_COMMUNE,SIN_OBSERVATION, DEMAND_ID) VALUES (" & interv_id & ",'" & uneIntervention.lieu & "'," & uneIntervention.no & "," & uneIntervention.ext & "," & uneIntervention.etage & "," & uneIntervention.porte & ",'" & uneIntervention.bat & "'," & uneIntervention.code & ",'" & uneIntervention.commentaire & "'," & uneIntervention.sin & "," & uneIntervention.caserne & ",'" & uneIntervention.sinobserv & "'," & demand_id & ");")
 
             Me.Close()
             CTA.Show()
 
         Catch ex As Exception
-            MessageBox.Show("Verifier les champs obligatoires")
+            MessageBox.Show(ex.ToString)
         End Try
 
     End Sub
     Private Sub PF1_GrilleAppel_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
         CTA.Show()
     End Sub
-
 End Class

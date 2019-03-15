@@ -12,9 +12,9 @@
     Private _Bat As String
     Private _commentaire As String
     Private _Code As String
-    Private _CodeCommune As Integer
+    Private _caserne As Integer
 
-    Public Sub New(ByVal id, ByVal nom, ByVal prenom, ByVal tel, ByVal unlieu, ByVal unno, ByVal unext, ByVal unetage, ByVal unporte, ByVal unbat, ByVal uncode, ByVal commune, ByVal commentaire)
+    Public Sub New(ByVal id, ByVal nom, ByVal prenom, ByVal tel, ByVal unlieu, ByVal unno, ByVal unext, ByVal unetage, ByVal unporte, ByVal unbat, ByVal uncode, ByVal caserne, ByVal commentaire)
         _id = id
         _nom = nom
         _prenom = prenom
@@ -26,7 +26,7 @@
         porte = unporte
         bat = unbat
         code = uncode
-        _CodeCommune = commune
+        _caserne = caserne
         _commentaire = commentaire
     End Sub
 
@@ -39,12 +39,12 @@
         End Set
     End Property
 
-    Public Property codecommune As Integer
+    Public Property caserne As Integer
         Get
-            Return _CodeCommune
+            Return _caserne
         End Get
         Set(ByVal value As Integer)
-            _CodeCommune = value
+            _caserne = value
         End Set
     End Property
 
