@@ -45,4 +45,8 @@ Public Class PF2_Consult_rapport
 
 
     End Sub
+
+    Private Sub RectangleShape1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RectangleShape1.Click
+
+    End Sub
 End Class

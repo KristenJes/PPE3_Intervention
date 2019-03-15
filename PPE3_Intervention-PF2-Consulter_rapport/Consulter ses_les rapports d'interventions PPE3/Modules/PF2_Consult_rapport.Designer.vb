@@ -75,7 +75,7 @@ Partial Class PF2_Consult_rapport
         'ListView1
         '
         Me.ListView1.AllowColumnReorder = True
-        Me.ListView1.CheckBoxes = True
+        Me.ListView1.FullRowSelect = True
         Me.ListView1.Location = New System.Drawing.Point(34, 80)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(522, 111)
@@ -83,7 +83,7 @@ Partial Class PF2_Consult_rapport
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
-        'Form1
+        'PF2_Consult_rapport
         '
         Me.AcceptButton = Me.btnselect
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -93,7 +93,7 @@ Partial Class PF2_Consult_rapport
         Me.Controls.Add(Me.LabelSélection)
         Me.Controls.Add(Me.btnselect)
         Me.Controls.Add(Me.ShapeContainer1)
-        Me.Name = "Form1"
+        Me.Name = "PF2_Consult_rapport"
         Me.Text = "Consulter les rapports"
         CType(Me.INTERVENTIONBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.INTERVENTIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
