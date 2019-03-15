@@ -80,12 +80,11 @@ Partial Class PF1_GrilleAppel
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.DepartListBox = New System.Windows.Forms.ListBox()
-        Me.Label24 = New System.Windows.Forms.Label()
         Me.SINISTRETableAdapter = New Grille_Appel.DataSet1TableAdapters.SINISTRETableAdapter()
         Me.COMMUNETableAdapter = New Grille_Appel.DataSet1TableAdapters.COMMUNETableAdapter()
         Me.Envoyer = New System.Windows.Forms.Button()
         Me.DataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         CType(Me.SINISTREBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -591,31 +590,13 @@ Partial Class PF1_GrilleAppel
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.DepartListBox)
-        Me.GroupBox4.Controls.Add(Me.Label24)
-        Me.GroupBox4.Location = New System.Drawing.Point(12, 533)
+        Me.GroupBox4.Controls.Add(Me.Panel1)
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 517)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(550, 107)
+        Me.GroupBox4.Size = New System.Drawing.Size(550, 201)
         Me.GroupBox4.TabIndex = 5
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "DEPART"
-        '
-        'DepartListBox
-        '
-        Me.DepartListBox.FormattingEnabled = True
-        Me.DepartListBox.Location = New System.Drawing.Point(106, 30)
-        Me.DepartListBox.Name = "DepartListBox"
-        Me.DepartListBox.Size = New System.Drawing.Size(93, 69)
-        Me.DepartListBox.TabIndex = 6
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(27, 30)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(66, 13)
-        Me.Label24.TabIndex = 5
-        Me.Label24.Text = "Depart Type"
         '
         'SINISTRETableAdapter
         '
@@ -627,7 +608,7 @@ Partial Class PF1_GrilleAppel
         '
         'Envoyer
         '
-        Me.Envoyer.Location = New System.Drawing.Point(451, 646)
+        Me.Envoyer.Location = New System.Drawing.Point(466, 724)
         Me.Envoyer.Name = "Envoyer"
         Me.Envoyer.Size = New System.Drawing.Size(75, 23)
         Me.Envoyer.TabIndex = 19
@@ -639,11 +620,22 @@ Partial Class PF1_GrilleAppel
         Me.DataSet1BindingSource.DataSource = Me.DataSet1
         Me.DataSet1BindingSource.Position = 0
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.AutoScroll = True
+        Me.Panel1.Location = New System.Drawing.Point(21, 19)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(523, 176)
+        Me.Panel1.TabIndex = 22
+        '
         'PF1_GrilleAppel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(574, 681)
+        Me.ClientSize = New System.Drawing.Size(574, 759)
         Me.Controls.Add(Me.Envoyer)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
@@ -662,7 +654,6 @@ Partial Class PF1_GrilleAppel
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
         CType(Me.DataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -720,14 +711,13 @@ Partial Class PF1_GrilleAppel
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents DataSet1 As Grille_Appel.DataSet1
     Friend WithEvents SINISTREBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents SINISTRETableAdapter As Grille_Appel.DataSet1TableAdapters.SINISTRETableAdapter
     Friend WithEvents COMMUNEBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents COMMUNETableAdapter As Grille_Appel.DataSet1TableAdapters.COMMUNETableAdapter
-    Friend WithEvents DepartListBox As System.Windows.Forms.ListBox
     Friend WithEvents Envoyer As System.Windows.Forms.Button
     Friend WithEvents DataSet1BindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 
 End Class

@@ -28,7 +28,7 @@
 
 
 
-Module Fonction
+Module Fonctions
 
 
     Public Function GetHostname()

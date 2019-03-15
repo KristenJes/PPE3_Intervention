@@ -1,9 +1,14 @@
 ﻿Public Class PF1_GrilleAppel
+
+    Dim caserne As String
+    Dim sinistre As Sinistre
+
     Private Sub PF1_GrilleAppel_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Dim query As DataTable = Connexion.ORA.Table("SELECT CIS_NOM FROM CASERNE;")
         For Each NomCaserne In query.Rows
-            localisationComboBox.Items.Add(NomCaserne("CIS_NOM"))
+            caserne = NomCaserne("CIS_NOM")
+            localisationComboBox.Items.Add(caserne)
             DemComboBox.Items.Add(NomCaserne("CIS_NOM"))
         Next
 
@@ -12,7 +17,8 @@
             sinistreComboBox.Items.Add(unSinistre("SIN_NATURE"))
         Next
 
-        'TODO: cette ligne de code charge les données dans la table 'DataSet1.COMMUNE'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
+
+        'TODO: cette ligne de code charge les données dans la table 'DataSet1. COMMUNE'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
         'Me.COMMUNETableAdapter.Fill(Me.DataSet1.COMMUNE)
         'TODO: cette ligne de code charge les données dans la table 'DataSet1.SINISTRE'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
         'Me.SINISTRETableAdapter.Fill(Me.DataSet1.SINISTRE)
@@ -30,19 +36,19 @@
         sinistreTextBox.Text = query.Rows(0)("SIN_ID").ToString()
 
         'On Crée un objet sinistre comprenant tous les champs
-        Dim Sin As New Sinistre(sinistreTextBox.Text, sinistreComboBox.Text)
-        DepartListBox.Items.Clear()
-        query = Connexion.ORA.Table("SELECT TYPE_ENG_NOM FROM PREVU,TYPE_ENGIN WHERE(TYPE_ENGIN.TYPE_ENG_ID = PREVU.TYPE_ENG_ID) AND PREVU.SIN_ID=" & sinistreTextBox.Text & ";")
-        For Each untypeengin In query.Rows
-            DepartListBox.Items.Add(untypeengin("TYPE_ENG_NOM"))
-        Next
+        sinistre = New Sinistre(sinistreTextBox.Text, sinistreComboBox.Text)
+
+        Load_Depart()
     End Sub
+
 
 
     Private Sub localisationComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles localisationComboBox.SelectedIndexChanged
         Dim nomcaserne As String = localisationComboBox.Text
         Dim query As DataTable = Connexion.ORA.Table("SELECT CIS_ID FROM CASERNE WHERE CIS_NOM='" & nomcaserne & "'")
         LocaComTextBox.Text = query.Rows(0)("CIS_ID").ToString()
+
+        Load_Depart()
     End Sub
 
 
@@ -116,4 +122,96 @@
     Private Sub PF1_GrilleAppel_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.FormClosing
         CTA.Show()
     End Sub
+
+
+
+
+
+    Dim caserneSelected As Caserne
+    Dim neededVehicles As New List(Of TypeEngin)
+    Dim selectedEngin As New List(Of Engin)
+    Private Sub Load_Depart()
+
+        Dim departTypes As DataTable = Connexion.ORA.Table("SELECT te.TYPE_ENG_ID, te.TYPE_ENG_NOM FROM PREVU, TYPE_ENGIN te WHERE(PREVU.TYPE_ENG_ID = te.TYPE_ENG_ID) AND SIN_ID = " & Sinistre.id)
+        For Each type_camion As DataRow In departTypes.Rows
+            neededVehicles.Add(New TypeEngin(type_camion("TYPE_ENG_ID")))
+        Next
+
+        caserneSelected = New Caserne(Connexion.ORA.Champ("SELECT * FROM Caserne WHERE CIS_NOM = '" & caserne & "'"), False)
+        Dim orderedCasernes As List(Of Caserne) = OrderCaserne(caserneSelected)
+        Try
+            For Each caserne As Caserne In orderedCasernes
+                caserne.loadPompiers()
+                caserne.loadEngins()
+
+                If (neededVehicles.Count <> selectedEngin.Count) Then
+                    For Each neededVehicule As TypeEngin In neededVehicles
+                        If (caserne.Engins.Count <> 0) Then
+                            For Each typeEng As Engin In caserne.getEnginsFromType(neededVehicule)
+
+                                selectedEngin.Add(typeEng)
+
+                                If (neededVehicles.Count = selectedEngin.Count) Then
+                                    GoTo end_of_for
+                                End If
+                                For counter = 0 To typeEng.Type.nbPlace
+                                Next
+                            Next
+                        End If
+                    Next
+                Else
+                    Exit Try
+                End If
+            Next
+        Finally
+        End Try
+
+end_of_for:
+
+        For Each engin In selectedEngin
+            Panel1.Controls.Add(Engin_Display(engin))
+        Next
+    End Sub
+
+    Public Function OrderCaserne(ByVal caserne As Caserne)
+        Dim orderedCasernes As New List(Of Caserne)()
+        Dim casernes As DataTable = Connexion.ORA.Table("SELECT CIS_ID, CIS_NOM, CIS_LAT, CIS_LONG FROM CASERNE WHERE CIS_LAT IS NOT NULL AND CIS_LONG IS NOT NULL AND ROWNUM <= 15 ORDER BY DISTANCE_LOC(" & caserne.Latitude & ", " & caserne.Longitude & ", CIS_LAT, CIS_LONG)")
+
+        For Each cas As DataRow In casernes.Rows
+            orderedCasernes.Add(New Caserne(cas, False))
+        Next
+
+        Return orderedCasernes
+    End Function
+
+    Public Function Engin_Display(ByVal camion)
+        Dim group As New GroupBox
+        Dim typeEnginText As New Label
+        Dim text2 As New Label
+        Dim button As New Button
+
+        typeEnginText.Text = camion.Type.nom
+        typeEnginText.Dock = DockStyle.Left
+        typeEnginText.Width = 125
+        typeEnginText.AutoSize = False
+
+        text2.Text = camion.Nom
+        text2.Dock = DockStyle.Left
+        text2.Width = 125
+        text2.AutoSize = False
+
+        button.Text = "Consulter"
+        button.Dock = DockStyle.Right
+        button.Height = 15
+
+        group.Controls.Add(typeEnginText)
+        group.Controls.Add(text2)
+        group.Controls.Add(button)
+        group.Dock = DockStyle.Top
+        group.Height = 60
+
+        Return group
+    End Function
+
+
 End Class

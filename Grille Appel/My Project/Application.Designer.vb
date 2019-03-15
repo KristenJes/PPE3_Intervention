@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Grille_Appel.ecranConnexion
+            Me.MainForm = Global.Grille_Appel.PF1_GrilleAppel
         End Sub
     End Class
 End Namespace

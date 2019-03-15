@@ -42,9 +42,9 @@ Partial Class PF1
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.AutoScroll = True
-        Me.Panel1.Location = New System.Drawing.Point(25, 12)
+        Me.Panel1.Location = New System.Drawing.Point(24, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(677, 420)
+        Me.Panel1.Size = New System.Drawing.Size(678, 420)
         Me.Panel1.TabIndex = 21
         '
         'PF1
